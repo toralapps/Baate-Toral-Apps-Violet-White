@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/audio"
+        android:icon="@drawable/ic_mic_black_24dp"
+        android:title="Audio"/>
+
+    <item android:id="@+id/video"
+        android:icon="@drawable/ic_videocam_black_24dp"
+        android:title="Video"/>
+
+    <item android:id="@+id/camera"
+        android:icon="@drawable/ic_flip_camera_android_black_24dp"
+        android:title="Camera"/>
+
+    <item android:id="@+id/placeholder"
+        android:title=""
+        android:enabled="false"/>
+
+
+</menu>

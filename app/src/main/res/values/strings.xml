@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Video Chat</string>
+
+    <string name="age_hading1">Are you above 18 ?</string>
+    <string name="name">Enter your name</string>
+    <string name="age_hading2">This app requiers you to be 18 years or older to continue</string>
+</resources>
