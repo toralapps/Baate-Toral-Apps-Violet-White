@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/line_art"
     tools:context=".activitys.ChatRoomActivity">
 
     <TextView
@@ -42,6 +43,7 @@
         android:id="@+id/videolistRecyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/line_art"
         app:layout_constraintTop_toBottomOf="@+id/view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
