@@ -21,6 +21,7 @@
       app:layout_constraintTop_toTopOf="parent" />
 
 
+
   <com.google.android.material.card.MaterialCardView
       android:id="@+id/viewpagercontainer"
       android:layout_width="0dp"

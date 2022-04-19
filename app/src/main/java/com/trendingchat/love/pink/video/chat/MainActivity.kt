@@ -36,9 +36,11 @@ import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.myech.video.bluepink.chat.blockuser.BlockList
 import com.trendingchat.love.pink.video.chat.extenstionfunctions.snackBar
 import com.trendingchat.love.pink.video.chat.repository.Response
 import com.trendingchat.love.pink.video.chat.singletons.ListOfVideos
+import com.trendingchat.love.pink.video.chat.videolistmodel.Data
 import com.trendingchat.love.pink.video.chat.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
@@ -60,6 +62,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var playerView: PlayerView
     lateinit var textureView: TextureView
+    lateinit var blockBtn:ImageView
 
 
     val CAMERA_FRONT = "1"
@@ -86,11 +89,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_SECURE,
+            WindowManager.LayoutParams.FLAG_SECURE
+        )
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
         playerView = findViewById(R.id.playerView)
         textureView = findViewById(R.id.textureView)
         bottomNavigation = findViewById(R.id.bottomnavigationview)
         bottomNavigation.background = null
         callend = findViewById(R.id.callend)
+        blockBtn = findViewById(R.id.blockBtn)
         reportBtn = findViewById(R.id.report)
 
         Permisstion()
@@ -113,7 +125,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
+        blockBtn.setOnClickListener {
+            blockuser(ListOfVideos.videos!!)
+        }
 
         playerView!!.setShutterBackgroundColor(Color.TRANSPARENT)
         playerView!!.requestFocus()
@@ -490,6 +504,24 @@ class MainActivity : AppCompatActivity() {
         } finally {
 
         }
+    }
+
+
+
+    fun blockuser(video: Data){
+        var oldlist = ArrayList<Data>()
+        if(BlockList.getBlockVideos(this).isNotEmpty()){
+            oldlist = BlockList.getBlockVideos(this).also {
+                it.add(video)
+            }
+        }else{
+            oldlist.add(video)
+        }
+        Log.d("DEEP list size", oldlist.size.toString())
+        BlockList.saveBlockVideos(this, oldlist)
+        Log.d("DEEP", BlockList.getBlockVideos(this).toString())
+        Toast.makeText(this,"User is blocked", Toast.LENGTH_SHORT).show()
+        finish()
     }
 
     protected fun stopBackgroundThread() {

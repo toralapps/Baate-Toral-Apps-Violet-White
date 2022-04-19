@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userdp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        app:layout_constraintStart_toEndOf="@+id/userdp"
+        app:layout_constraintTop_toTopOf="@+id/userdp"
+        style="@style/TextAppearance.Material3.TitleMedium"
+        app:layout_constraintEnd_toStartOf="@+id/unblockbtn"
+        app:layout_constraintBottom_toBottomOf="@+id/userdp"/>
+
+    <Button
+        android:id="@+id/unblockbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UnBlock"
+        app:icon ="@drawable/ic_remove_circle_outline_black_24dp"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+       app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/username"
+        app:layout_constraintBottom_toBottomOf="@+id/username"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

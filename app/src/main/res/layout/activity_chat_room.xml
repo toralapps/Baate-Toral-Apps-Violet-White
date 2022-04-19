@@ -17,6 +17,18 @@
         app:layout_constraintTop_toTopOf="parent"
         style="@style/TextAppearance.Material3.DisplaySmall"/>
 
+    <com.google.android.material.chip.Chip
+        android:id="@+id/blockusers"
+        style="@style/Widget.Material3.Chip.Assist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Block Users"
+        android:layout_marginEnd="5dp"
+        app:chipIcon="@drawable/ic_baseline_block_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:ensureMinTouchTargetSize="true"/>
+
     <View
         android:layout_width="wrap_content"
         android:layout_height="0.1dp"
