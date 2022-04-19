@@ -71,11 +71,15 @@ class ChatRoomActivity : BaseIntertisialAds(), VideoListAdapter.Interaction {
             when(it){
                 is Response.Success -> {
                     Log.d("DEEP", "reposse is success ${it.videoList!!.Status}")
-                    val unblockUsers = getunblockedUsers(it.videoList!!.Data)
-                    if (unblockUsers.isNotEmpty()) {
-                        adapter.submitList(unblockUsers.shuffled())
+                    if (it.videoList!!.Data.isNotEmpty()) {
+                        val unblockUsers = getunblockedUsers(it.videoList!!.Data)
+                        if (unblockUsers.isNotEmpty()) {
+                            adapter.submitList(unblockUsers.shuffled())
+                        } else {
+                            snackBar(title, "Please try later")
+                        }
                     }else{
-                        snackBar(title,"Please try later")
+                        snackBar(title, "Please try later")
                     }
                 }
                 is Response.error ->{

@@ -26,7 +26,7 @@ class Repository @Inject constructor(private val api: Api) {
                 result = ListOfVideos.Store
             }
 
-       if(result!!.isSuccessful && result.body()!= null){
+       if(result!!.isSuccessful && result.body()!= null && result.body()!!.Data.isNotEmpty()){
            response.value = Response.Success(result.body())
 
        }else{
