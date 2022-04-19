@@ -16,5 +16,5 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name = "Video Chat"
+rootProject.name = "Pink White Video Chat"
 include ':app'
