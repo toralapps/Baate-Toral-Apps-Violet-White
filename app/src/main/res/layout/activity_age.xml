@@ -1,103 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activitys.AgeActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
 
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    app:layout_constraintBottom_toTopOf="@+id/container"
-    app:layout_constraintTop_toTopOf="parent"
-    android:scaleType="centerCrop"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:src="@drawable/age_activity_bg"/>
-
-    <LinearLayout
-        android:id="@+id/banner_container"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="5dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="bottom|center">
+        android:layout_height="match_parent"
+        android:background="@drawable/agescreen_bg"
+        tools:context=".activitys.AgeActivity">
 
-    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:background="@drawable/round_shap"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+            android:id="@+id/banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-        <TextView
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            style="@style/TextAppearance.Material3.DisplaySmall"
-            android:text="@string/age_hading1"/>
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/age_hading2"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:layout_marginBottom="20dp"
-            style="@style/TextAppearance.Material3.TitleMedium"/>
-
-
-        <Button
-            android:id="@+id/filledButton"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:layout_marginBottom="20dp"
-            android:paddingEnd="50dp"
-            android:paddingStart="50dp"
-            android:layout_height="wrap_content"
-            style="@style/TextAppearance.Material3.HeadlineLarge"
-            android:text="Yes"
-            />
-
-        <Button
-            android:id="@+id/exitbtn"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:textSize="20sp"
-            android:layout_height="wrap_content"
-            android:text="Exit"
-            style="@style/Widget.Material3.Button.TextButton"
-            />
-
-        <TextView
-            android:id="@+id/tvDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="By using Video Call app you agree to our Privacy Policy and Terms use "
-            android:textSize="13sp"
-            android:textColor="@color/white"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="18dp"
-            android:gravity="center_horizontal"/>
-    </LinearLayout>
+            <TextView
+                style="@style/TextAppearance.Material3.DisplaySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:text="@string/age_hading1"
+                android:textColor="@color/white" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textAlignment="center"
+                style="@style/TextAppearance.Material3.TitleSmall"
+                android:text="This app requires you to be 18 years or older to continue"/>
+
+            <com.shawnlin.numberpicker.NumberPicker
+                android:id="@+id/number_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:np_width="300dp"
+                app:np_height="200dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:layout_gravity="center"
+                app:np_dividerColor="@color/white"
+                app:np_formatter="18"
+                app:np_max="59"
+                app:np_dividerThickness="4dp"
+                app:np_dividerLength="28dp"
+                app:np_orientation="horizontal"
+                app:np_min="0"
+                app:np_selectedTextColor="@color/teal_200"
+                app:np_selectedTextSize="30sp"
+                app:np_textColor="@color/white"
+                app:np_textSize="25sp"
+                app:np_value="3"/>
+
+            <TextView
+                android:id="@+id/filledButton"
+                style="@style/TextAppearance.Material3.HeadlineLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/gradient_shap"
+                android:paddingStart="50dp"
+                android:paddingEnd="50dp"
+                android:text="Next"
+                android:clickable="true"
+                android:focusable="true"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/exitbtn"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingStart="50dp"
+                android:paddingEnd="50dp"
+                android:text="Exit"
+                android:textColor="@color/white" />
+
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_horizontal"
+                android:text="By using Video Call app you agree to our Privacy Policy and Terms use "
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

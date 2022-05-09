@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/purple_700"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:src="@drawable/terms_use_logo" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/titletxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terms of Use"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        style="@style/TextAppearance.Material3.HeadlineMedium"
+        app:layout_constraintStart_toEndOf="@+id/img"
+        app:layout_constraintTop_toTopOf="@+id/img"
+        android:textColor="@color/purple_500"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Last updated February 2021"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        style="@style/TextAppearance.Material3.TitleMedium"
+       app:layout_constraintTop_toBottomOf="@+id/titletxt"
+        app:layout_constraintBottom_toBottomOf="@+id/img"
+        android:textColor="@color/purple_500"
+        app:layout_constraintStart_toStartOf="@+id/titletxt" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/img"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <WebView
+        android:id="@+id/wv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_centerVertical="true"
+        android:text="Term of use"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintTop_toBottomOf="@+id/divider1"
+        android:textSize="18sp" />
+
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bottombtncontainer"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/bottombtncontainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp">
+
+
+        <TextView
+            android:id="@+id/declain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/term_bg_declain"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="Decline"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/accept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/term_bg"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="Accept"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:layout_margin="5dp"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

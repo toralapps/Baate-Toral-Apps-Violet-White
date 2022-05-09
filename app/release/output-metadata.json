@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.trendingchat.love.pink.video.chat",
+  "applicationId": "com.pareshb.myguessthepic",
   "variantName": "release",
   "elements": [
     {
@@ -13,7 +13,7 @@
       "attributes": [],
       "versionCode": 1,
       "versionName": "1.0",
-      "outputFile": "com.trendingchat.love.pink.video.chat-v1(1.0)-release.apk"
+      "outputFile": "com.pareshb.myguessthepic-v1(1.0)-release.apk"
     }
   ],
   "elementType": "File"

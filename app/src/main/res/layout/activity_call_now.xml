@@ -4,8 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/line_art"
+    android:background="@drawable/profile_screen_bg"
     tools:context=".activitys.CallNowActivity">
+
+
+  <ImageView
+      android:id="@+id/backbtn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      android:layout_marginTop= "20dp"
+      android:layout_marginStart="10dp"
+      android:layout_marginEnd="10dp"
+      android:layout_marginBottom="10dp"
+      android:src="@drawable/ic_baseline_arrow_back_ios_new_24"/>
 
 
   <TextView
@@ -15,57 +28,22 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="10dp"
       android:text="Call now"
-      android:textColor="@color/purple_500"
+      android:textColor="@color/white"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.5"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+      app:layout_constraintStart_toStartOf="@+id/backbtn"
+      app:layout_constraintTop_toTopOf="@+id/backbtn"
+      app:layout_constraintBottom_toBottomOf="@+id/backbtn"/>
 
 
 
-  <com.google.android.material.card.MaterialCardView
-      android:id="@+id/viewpagercontainer"
-      android:layout_width="0dp"
+  <androidx.viewpager2.widget.ViewPager2
+      android:id="@+id/viewpager"
+      android:layout_width="match_parent"
+      android:orientation="vertical"
       android:layout_height="0dp"
-      android:layout_margin="20dp"
-      app:cardCornerRadius="20dp"
-      app:layout_constraintBottom_toTopOf="@+id/guideline2"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.5"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/title">
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-
-  </com.google.android.material.card.MaterialCardView>
-
-
-  <ImageView
-      android:id="@+id/leftArrow"
-      android:layout_width="48dp"
-      android:layout_height="48dp"
-      android:clickable="true"
-      android:focusable="true"
-      android:src="@drawable/left_arrow"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintBottom_toBottomOf="@+id/viewpagercontainer"
-      app:layout_constraintTop_toTopOf="@+id/viewpagercontainer"
-      tools:layout_editor_absoluteX="16dp" />
-
-  <ImageView
-      android:id="@+id/rightArrow"
-      android:layout_width="48dp"
-      android:clickable="true"
-      android:focusable="true"
-      android:layout_height="48dp"
-      android:src="@drawable/right_pink"
-      app:layout_constraintBottom_toBottomOf="@+id/viewpagercontainer"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/viewpagercontainer"/>
+      app:layout_constraintTop_toBottomOf="@+id/title"
+      app:layout_constraintBottom_toTopOf="@+id/callbtn"/>
 
 
 
@@ -79,15 +57,19 @@
 
 <com.ncorti.slidetoact.SlideToActView
     android:id="@+id/callbtn"
-    android:layout_width="match_parent"
+    android:layout_width="300dp"
     android:layout_height="wrap_content"
-    app:outer_color="@color/gray"
+    app:outer_color="@color/purple_200"
     android:layout_margin="20dp"
-    app:text="Slide to Call now"
-    app:inner_color="@color/purple_500"
+    app:text="Call now"
+    app:text_style="bold"
+    app:text_color="@color/white"
+    app:inner_color="@color/teal_200"
     app:slider_icon_color="@color/white"
     app:slider_icon="@drawable/ic_outline_call_24"
-    app:layout_constraintTop_toBottomOf="@+id/guideline2"/>
+    app:layout_constraintBottom_toTopOf="@+id/banner_container"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
 
 
   <LinearLayout
@@ -96,7 +78,6 @@
       android:layout_height="wrap_content"
       android:orientation="vertical"
       android:layout_margin="5dp"
-      app:layout_constraintTop_toBottomOf="@+id/callbtn"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toEndOf="parent"

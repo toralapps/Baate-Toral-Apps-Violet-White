@@ -4,50 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/line_art"
+    android:background="@drawable/listofgrilsbg"
     tools:context=".activitys.ChatRoomActivity">
 
-    <TextView
-        android:id="@+id/title"
+    <ImageView
+        android:id="@+id/backbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Room"
-        android:textColor="@color/purple_500"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/TextAppearance.Material3.DisplaySmall"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/backtext"
+        style="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Back"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/backbtn"
+        app:layout_constraintStart_toEndOf="@+id/backbtn"
+        app:layout_constraintTop_toTopOf="@+id/backbtn" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/blockusers"
         style="@style/Widget.Material3.Chip.Assist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Block Users"
         android:layout_marginEnd="5dp"
+        android:text="Block Users"
         app:chipIcon="@drawable/ic_baseline_block_24"
+        app:ensureMinTouchTargetSize="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:ensureMinTouchTargetSize="true"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <View
+
+    <TextView
+        android:id="@+id/flagname"
         android:layout_width="wrap_content"
-        android:layout_height="0.1dp"
-        android:background="#000"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        android:id="@+id/view"
+        android:layout_height="wrap_content"
+        android:text="Flage Name"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        style="@style/TextAppearance.Material3.HeadlineSmall"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backbtn" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/flagname"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/videolistRecyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/line_art"
-        app:layout_constraintTop_toBottomOf="@+id/view"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="49dp" />
 
