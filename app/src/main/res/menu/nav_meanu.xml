@@ -13,7 +13,7 @@
         android:icon="@drawable/ic_flip_camera_android_black_24dp"
         android:title="Camera"/>
 
-    <item android:id="@+id/placeholder"
+    <item
         android:title=""
         android:enabled="false"/>
 

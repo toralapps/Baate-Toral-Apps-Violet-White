@@ -7,7 +7,6 @@
     tools:context=".MainActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -78,7 +77,6 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/reprttxt"
         style="@style/TextAppearance.Material3.LabelSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -99,13 +97,13 @@
 
     <ImageView
         android:id="@+id/blockBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="13dp"
+        android:layout_height="21dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:src="@drawable/ic_baseline_block_24"
         app:layout_constraintEnd_toStartOf="@+id/report"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

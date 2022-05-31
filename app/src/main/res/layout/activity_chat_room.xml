@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/listofgrilsbg"
+    android:background="@drawable/girls_list_bg"
     tools:context=".activitys.ChatRoomActivity">
 
     <ImageView
@@ -19,17 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/backtext"
-        style="@style/TextAppearance.Material3.TitleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="Back"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/backbtn"
-        app:layout_constraintStart_toEndOf="@+id/backbtn"
-        app:layout_constraintTop_toTopOf="@+id/backbtn" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/blockusers"
