@@ -49,7 +49,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img2"
                 tools:layout_editor_absoluteX="62dp"
                 tools:layout_editor_absoluteY="-50dp" />
 

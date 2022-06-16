@@ -125,6 +125,7 @@ class ChatRoomActivity : BaseInterstialAd(), VideoListAdapter.Interaction {
             val intent = Intent(this, CallNowActivity::class.java)
             startActivity(intent)
         }
+        initShow()
     }
 
 

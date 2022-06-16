@@ -9,6 +9,6 @@ public interface ApiClient {
     /*@GET("com.printf.demo.json")
     fun GetAd():Call<AdModelResponse>*/
 //    @GET("pink-white-video-chat.json")
-    @GET("printf-test-ad.json")
+    @GET("test-ads-true.json")
     Call<Root> GetAd();
 }

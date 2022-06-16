@@ -33,12 +33,12 @@ import retrofit2.Callback
 import retrofit2.Response
 
 open class BaseClass : AppCompatActivity() {
-
-
     var mAdView: AdView? = null
     var adContainer: LinearLayout? = null
     var bannerLayout: IronSourceBannerLayout? = null
     var madView: com.facebook.ads.AdView? = null
+    var mInterstitialAd: InterstitialAd? = null
+    var fbInterstitialAd: com.facebook.ads.InterstitialAd? = null
 
     companion object {
         var ironSource_App_id = ""
@@ -46,8 +46,6 @@ open class BaseClass : AppCompatActivity() {
         var firstMonetizationId = 0
         var admob_bannerkey = ""
         var adDataObject: Root? = null
-        var mInterstitialAd: InterstitialAd? = null
-        var fbInterstitialAd: com.facebook.ads.InterstitialAd? = null
         var admob_interstitial_key = ""
         var admob_native_key = ""
         var admob_App_id: String? = null
@@ -285,44 +283,54 @@ open class BaseClass : AppCompatActivity() {
         //MediationTestSuite.launch(BaseActivity.this);
     }
     fun loadIronSourceInterstialAd() {
-        IronSource.init(this, ironSource_App_id)
-        IronSource.loadInterstitial()
-        IronSource.setInterstitialListener(object : InterstitialListener {
-            override fun onInterstitialAdReady() {
-            }
-            override fun onInterstitialAdLoadFailed(ironSourceError: IronSourceError) {
-                loadAdMobInterstitialAd()
-            }
+        try {
+            IronSource.init(this, ironSource_App_id)
+            IronSource.loadInterstitial()
+            IronSource.setInterstitialListener(object : InterstitialListener {
+                override fun onInterstitialAdReady() {
+                }
 
-            override fun onInterstitialAdOpened() {}
-            override fun onInterstitialAdClosed() {
-                IronSource.loadInterstitial()
-            }
+                override fun onInterstitialAdLoadFailed(ironSourceError: IronSourceError) {
+                    Log.d("DEEP","irons source interstitalAdLoadFailed")
+                    loadAdMobInterstitialAd()
+                }
 
-            override fun onInterstitialAdShowSucceeded() {}
-            override fun onInterstitialAdShowFailed(ironSourceError: IronSourceError) {}
-            override fun onInterstitialAdClicked() {}
-        })
+                override fun onInterstitialAdOpened() {}
+                override fun onInterstitialAdClosed() {
+                    IronSource.loadInterstitial()
+                }
+
+                override fun onInterstitialAdShowSucceeded() {}
+                override fun onInterstitialAdShowFailed(ironSourceError: IronSourceError) {}
+                override fun onInterstitialAdClicked() {}
+            })
+        }catch (e:Exception){
+            Log.d("DEEP","LoadIronsource method error")
+        }
     }
 
     fun showIronSourceInterstitialAd() {
-        IronSource.init(this, ironSource_App_id)
-        IronSource.showInterstitial()
-        IronSource.setInterstitialListener(object : InterstitialListener {
-            override fun onInterstitialAdReady() {}
-            override fun onInterstitialAdLoadFailed(ironSourceError: IronSourceError) {
-                showAdMobInterstialAd()
-            }
+        try {
+            IronSource.init(this, ironSource_App_id)
+            IronSource.showInterstitial()
+            IronSource.setInterstitialListener(object : InterstitialListener {
+                override fun onInterstitialAdReady() {}
+                override fun onInterstitialAdLoadFailed(ironSourceError: IronSourceError) {
+                    showAdMobInterstialAd()
+                }
 
-            override fun onInterstitialAdOpened() {}
-            override fun onInterstitialAdClosed() {
-                IronSource.loadInterstitial()
-            }
+                override fun onInterstitialAdOpened() {}
+                override fun onInterstitialAdClosed() {
+                    IronSource.loadInterstitial()
+                }
 
-            override fun onInterstitialAdShowSucceeded() {}
-            override fun onInterstitialAdShowFailed(ironSourceError: IronSourceError) {}
-            override fun onInterstitialAdClicked() {}
-        })
+                override fun onInterstitialAdShowSucceeded() {}
+                override fun onInterstitialAdShowFailed(ironSourceError: IronSourceError) {}
+                override fun onInterstitialAdClicked() {}
+            })
+        }catch (e:Exception){
+            Log.d("DEEP","IRSONSOURCE SHOW AD ERROR")
+        }
     }
 
     fun loadAdMobBannerAd() {
@@ -331,8 +339,8 @@ open class BaseClass : AppCompatActivity() {
         }
         val adRequest = AdRequest.Builder().build()
         mAdView = AdView(applicationContext)
-        mAdView!!.adSize = AdSize.BANNER
         mAdView!!.adUnitId = admob_bannerkey
+        mAdView?.setAdSize(AdSize.BANNER)
         mAdView!!.adListener = object : AdListener() {
             override fun onAdLoaded() {
                 Log.d("DEEP","banner AdMob add load")
@@ -349,72 +357,92 @@ open class BaseClass : AppCompatActivity() {
         // MediationTestSuite.launch(BaseActivity.this);
     }
     fun loadAdMobInterstitialAd() {
-        val adRequest = AdRequest.Builder().build()
-        InterstitialAd.load(this@BaseClass, admob_interstitial_key, adRequest,
-            object : InterstitialAdLoadCallback() {
-                override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                    // The mInterstitialAd reference will be null until
-                    // an ad is loaded.
-                    mInterstitialAd = interstitialAd
-                    Log.d("DEEP","Admob interstitalAd add load")
-                    Log.i(FacebookMediationAdapter.TAG, "onAdLoaded")
-                }
+        try {
+            val adRequest = AdRequest.Builder().build()
+            InterstitialAd.load(this@BaseClass, admob_interstitial_key, adRequest,
+                object : InterstitialAdLoadCallback() {
+                    override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        try {
+                            mInterstitialAd = interstitialAd
+                            Log.d("DEEP", "Admob interstitalAd add load")
+                            Log.i(FacebookMediationAdapter.TAG, "onAdLoaded")
+                        } catch (e: Exception) {
+                            Log.d("DEEP", "adMob Load Error")
+                        }
+                    }
 
-                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-                    // Handle the error
-                    Log.d("DEEP","Admob interstitalAd add load Failed")
-                    Log.i(FacebookMediationAdapter.TAG, loadAdError.message)
-                    mInterstitialAd = null
-                    loadIronSourceInterstialAd()
-                }
-            })
+
+                    override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                        // Handle the error
+                        try {
+                            Log.d(
+                                "DEEP",
+                                "Admob interstitalAd add load Failed ${loadAdError.message}"
+                            )
+                            mInterstitialAd = null
+                            loadIronSourceInterstialAd()
+                        } catch (e: Exception) {
+                            Log.d("DEEP", "ADMOB Load Failed Error")
+                        }
+                    }
+                })
+        }catch (e:Exception){
+            Log.d("DEEP","ADMOB SHOW FAILED")
+        }
     }
 
     fun showAdMobInterstialAd() {
-        if (mInterstitialAd != null) {
-            mInterstitialAd!!.show(this@BaseClass)
-            mInterstitialAd!!.setFullScreenContentCallback(object : FullScreenContentCallback() {
-                override fun onAdDismissedFullScreenContent() {
-                    Log.d("TAG", "The ad was dismissed.")
-                    val adRequest = AdRequest.Builder().build()
-                    InterstitialAd.load(this@BaseClass,
-                        admob_interstitial_key,
-                        adRequest,
-                        object : InterstitialAdLoadCallback() {
-                            override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                                // The mInterstitialAd reference will be null until
-                                // an ad is loaded.
-                                Log.d("DEEP","Admob interstitalAd add load Failed second")
-                                mInterstitialAd = interstitialAd
-                                //
-                                //                                    showad(view);
+        try {
+            if (mInterstitialAd != null) {
+                mInterstitialAd!!.show(this@BaseClass)
+                mInterstitialAd!!.setFullScreenContentCallback(object :
+                    FullScreenContentCallback() {
+                    override fun onAdDismissedFullScreenContent() {
+                        Log.d("TAG", "The ad was dismissed.")
+                        val adRequest = AdRequest.Builder().build()
+                        InterstitialAd.load(this@BaseClass,
+                            admob_interstitial_key,
+                            adRequest,
+                            object : InterstitialAdLoadCallback() {
+                                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                                    // The mInterstitialAd reference will be null until
+                                    // an ad is loaded.
+                                    Log.d("DEEP", "Admob interstitalAd add load Failed second")
+                                    mInterstitialAd = interstitialAd
+                                    //
+                                    //                                    showad(view);
 
 
-                            }
+                                }
 
-                            override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-                                // Handle the error
-                                Log.i(FacebookMediationAdapter.TAG, loadAdError.message)
-                                Log.d("DEEP","Admob interstitalAd add load Failed second")
-                                mInterstitialAd = null
-                                showIronSourceInterstitialAd()
-                            }
-                        })
-                }
+                                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                                    // Handle the error
+                                    Log.i(FacebookMediationAdapter.TAG, loadAdError.message)
+                                    Log.d("DEEP", "Admob interstitalAd add load Failed second")
+                                    mInterstitialAd = null
+                                    showIronSourceInterstitialAd()
+                                }
+                            })
+                    }
 
-                override fun onAdFailedToShowFullScreenContent(adError: AdError) {
-                    Log.d("TAG", "The ad failed to show.")
-                }
+                    override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                        Log.d("DEEP", "The ad failed to show.")
+                    }
 
-                override fun onAdShowedFullScreenContent() {
-                    mInterstitialAd = null
-                    Log.d("DEEP","Admob interstitalAd add showing")
-                    Log.d("TAG", "The ad was shown.")
-                }
-            })
-        } else {
-            showIronSourceInterstitialAd()
-            Log.d("TAG", "The interstitial ad wasn't ready yet.")
+                    override fun onAdShowedFullScreenContent() {
+                        mInterstitialAd = null
+                        Log.d("DEEP", "Admob interstitalAd add showing")
+                        Log.d("TAG", "The ad was shown.")
+                    }
+                })
+            } else {
+                showIronSourceInterstitialAd()
+                Log.d("TAG", "The interstitial ad wasn't ready yet.")
+            }
+        }catch (e:Exception){
+            Log.d("DEEP","ADMOB SHOW ERROR")
         }
     }
 

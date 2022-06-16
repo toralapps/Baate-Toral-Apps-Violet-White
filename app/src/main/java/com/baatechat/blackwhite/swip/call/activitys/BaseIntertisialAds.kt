@@ -140,7 +140,7 @@ open class BaseInterstialAd : AppCompatActivity() {
     fun showFacebookinitstiaalAdView()
     {
 
-        BaseClass.fbInterstitialAd?.let {
+            fbInterstitialAd?.let {
             try{
                 it.show()
                 Log.d("DEEP","facebook add showe")

@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ServiceGenerator {
 
 
-    public static final String BASE_URL ="https://baps.printftech.com/android-ads/";
+    public static final String BASE_URL ="https://raw.githubusercontent.com/printf-app-data/printf-app-data.github.io/main/Ad-Test-API/";
 
     private static Retrofit retrofit = null;
 

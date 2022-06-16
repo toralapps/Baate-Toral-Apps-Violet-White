@@ -35,8 +35,7 @@
                     android:background="@drawable/roundedlayout"
                     android:scaleType="centerCrop"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/male_icon" />
+                    android:adjustViewBounds="true"/>
 
             </LinearLayout>
 
