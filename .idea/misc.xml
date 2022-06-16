@@ -3,6 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/drawable/gradiant_bg.xml" value="0.136" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/drawable/ic_baseline_block_24.xml" value="0.2095" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/drawable/ic_baseline_report_24.xml" value="0.2095" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/drawable/term_bg.xml" value="0.2105" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/drawable/term_bg_declain.xml" value="0.2105" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/layout/activity_age.xml" value="0.18" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/layout/activity_block_list.xml" value="0.14" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/layout/activity_call_now.xml" value="0.1" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/layout/activity_chat_room.xml" value="0.16673792218896966" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/layout/activity_gender.xml" value="0.22" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/layout/activity_loading_screen.xml" value="0.16673792218896966" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/layout/activity_location.xml" value="0.16673792218896966" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/layout/activity_main.xml" value="0.16673792218896966" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/layout/block_list_layout.xml" value="0.16673792218896966" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/layout/layout_flag_list.xml" value="0.16673792218896966" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/layout/layout_girls_list.xml" value="0.16673792218896966" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/layout/new_splash_screen_layout.xml" value="0.16673792218896966" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/layout/new_terms_use_layout.xml" value="0.16673792218896966" />
+        <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Baate Chat Black White Chat/app/src/main/res/layout/new_viewpager_list.xml" value="0.16673792218896966" />
         <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Chaaty Video Green Black Chat/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.1075" />
         <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Chaaty Video Green Black Chat/app/src/main/res/drawable/ic_baseline_block_24.xml" value="0.1735" />
         <entry key="..\:/Users/deepp/AndroidStudioProjects/Baate Chaaty Video Green Black Chat/app/src/main/res/drawable/image_selector.xml" value="0.1" />

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/enter_name_gender_selection_background"
-    app:layoutDescription="@xml/activity_gender_scene"
-    tools:context=".activitys.GenderActivity">
+    android:background="@drawable/gender_screen_background"
+    tools:context="com.baatechat.blackwhite.swip.call.activitys.GenderActivity">
 
 
     <ImageView
@@ -20,66 +19,76 @@
 
 
     <TextView
-        style="@style/TextAppearance.Material3.DisplaySmall"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="choose your gender"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/femalecard"
-        app:layout_constraintEnd_toEndOf="@+id/femalecard"
-        app:layout_constraintStart_toStartOf="@+id/malecard"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/backbtn"
+        app:layout_constraintStart_toEndOf="@+id/backbtn"
+        app:layout_constraintTop_toTopOf="@+id/backbtn" />
 
 
     <ImageView
         android:id="@+id/malecard"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
+        android:layout_width="180dp"
+        android:layout_height="160dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="60dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/malebg_green"
-        app:layout_constraintBottom_toTopOf="@+id/edittext"
+        android:src="@drawable/male_not_selected"
+        app:layout_constraintEnd_toStartOf="@+id/femalecard"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47000003" />
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
 
     <ImageView
         android:id="@+id/femalecard"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
+        android:layout_width="180dp"
+        android:layout_height="160dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="20dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/femalebg_green"
-        app:layout_constraintBottom_toTopOf="@+id/edittext"
+        android:src="@drawable/female_not_selected"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/malecard"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
+        android:text="FeMale"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/femalecard"
-        app:layout_constraintStart_toStartOf="@+id/femalecard"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/femalecard"
-        android:text="FeMale"/>
+        app:layout_constraintStart_toStartOf="@+id/femalecard"
+        app:layout_constraintTop_toBottomOf="@+id/femalecard" />
 
     <TextView
+        android:id="@+id/maletxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
+        android:text="Male"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/malecard"
-        app:layout_constraintStart_toStartOf="@+id/malecard"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/malecard"
-        android:text="Male"/>
+        app:layout_constraintStart_toStartOf="@+id/malecard"
+        app:layout_constraintTop_toBottomOf="@+id/malecard" />
 
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/gradiant_bg"
+        app:layout_constraintBottom_toTopOf="@+id/enternametxt"
+        app:layout_constraintTop_toBottomOf="@+id/maletxt" />
 
     <TextView
+        android:id="@+id/enternametxt"
         style="@style/TextAppearance.Material3.TitleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -97,29 +106,50 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/purple_500"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:hintTextColor="@color/purple_700"
-        app:layout_constraintBottom_toTopOf="@+id/elevatedButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/malecard">
 
     </EditText>
 
-    <Button
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/elevatedButton"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/next_btn"
         android:text="Next"
-        android:textSize="20sp"
         app:iconGravity="textEnd"
         app:iconSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/banner_container"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/edittext"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/edittext" />
+        app:layout_constraintStart_toStartOf="@+id/edittext"
+        app:layout_constraintTop_toBottomOf="@+id/edittext"
+        app:layout_constraintVertical_bias="0.32999998" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loading_icon"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="80dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edittext"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/edittext"
+        app:layout_constraintTop_toBottomOf="@+id/edittext"
+        app:layout_constraintVertical_bias="0.32999998"
+        app:lottie_rawRes="@raw/loading" />
 
     <LinearLayout
         android:id="@+id/banner_container"
@@ -133,4 +163,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.constraintlayout.motion.widget.MotionLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

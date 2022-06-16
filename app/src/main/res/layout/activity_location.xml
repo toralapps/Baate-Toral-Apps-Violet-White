@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ageselectionbg"
-    tools:context=".activitys.LocationActivity">
+    android:background="@drawable/category_screen_background"
+    tools:context="com.baatechat.blackwhite.swip.call.activitys.LocationActivity">
 
     <ImageView
         android:id="@+id/backbtn"
@@ -21,32 +21,27 @@
 
 
     <TextView
+        android:id="@+id/titletxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select from age"
-        android:textSize="25sp"
+        android:text="Select from category"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/backbtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toEndOf="@+id/backbtn"
+        app:layout_constraintTop_toTopOf="@+id/backbtn" />
 
 
-    <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/divider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/backbtn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/flagsrecycler"
         android:layout_width="match_parent"
         android:layoutAnimation="@anim/layoutanimation"
         android:layout_height="0dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@+id/divider"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/titletxt"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

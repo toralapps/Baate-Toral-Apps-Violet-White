@@ -8,100 +8,50 @@
     android:layout_marginEnd="10dp"
     android:layout_height="wrap_content">
 
-    <androidx.cardview.widget.CardView
+    <TextView
+        android:id="@+id/agetext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/purple_500"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:cardCornerRadius="20dp">
+        android:text="18 to 25"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        app:dividerColor="@color/purple_500"
+        app:layout_constraintTop_toBottomOf="@+id/agetext"
+        app:layout_constraintStart_toStartOf="@+id/cardview"
+        app:layout_constraintEnd_toEndOf="@+id/cardview"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="300dp"
+        android:layout_height="330dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="25dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardcontainer"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:cardCornerRadius="28dp"
-                app:layout_constraintStart_toEndOf="@+id/guideline5">
-
-                <ImageView
-                    android:id="@+id/user"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/male_icon" />
-
-
-
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/arrow_next"
-                    android:layout_gravity="right|center_vertical"/>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="252dp" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/cardcontainer"
-                app:layout_constraintStart_toStartOf="parent"
-                android:orientation="vertical"
-                app:layout_constraintTop_toTopOf="parent" >
-
-                <TextView
-                    android:id="@+id/agestart"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="25sp"
-                    android:textAlignment="center"
-                    android:text="18"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="25sp"
-                    android:textAlignment="center"
-                    android:text="To"/>
-
-                <TextView
-                    android:id="@+id/endage"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="25sp"
-                    android:textAlignment="center"
-                    android:text="25"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:maxWidth="5dp"
-                    android:textSize="25sp"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="Age"/>
-
-
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/user"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img2"
+                tools:layout_editor_absoluteX="62dp"
+                tools:layout_editor_absoluteY="-50dp" />
 
 
 

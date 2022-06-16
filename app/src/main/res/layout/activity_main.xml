@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.baatechat.blackwhite.swip.call.MainActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:backgroundTint="@color/purple_200"
+            android:backgroundTint="@color/purple_700"
             app:fabAlignmentMode="end"
             app:fabCradleMargin="20dp"
             app:fabCradleRoundedCornerRadius="20dp"
@@ -97,8 +97,8 @@
 
     <ImageView
         android:id="@+id/blockBtn"
-        android:layout_width="13dp"
-        android:layout_height="21dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:src="@drawable/ic_baseline_block_24"

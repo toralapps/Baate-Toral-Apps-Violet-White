@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/profile_screen_bg"
-    tools:context=".activitys.CallNowActivity">
+    android:background="@color/black"
+    tools:context="com.baatechat.blackwhite.swip.call.activitys.CallNowActivity">
 
 
   <ImageView
@@ -25,9 +25,10 @@
   <androidx.viewpager2.widget.ViewPager2
       android:id="@+id/viewpager"
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
+      android:layout_height="0dp"
       android:orientation="vertical"
-      app:layout_constraintBottom_toTopOf="@+id/callbtn" />
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toTopOf="@+id/banner_container" />
 
 
 
@@ -38,21 +39,6 @@
       app:layout_constraintGuide_percent="0.7" />
 
 
-<com.ncorti.slidetoact.SlideToActView
-    android:id="@+id/callbtn"
-    android:layout_width="300dp"
-    android:layout_height="wrap_content"
-    app:outer_color="@color/purple_200"
-    android:layout_margin="20dp"
-    app:text="Call now"
-    app:text_style="bold"
-    app:text_color="@color/white"
-    app:inner_color="@color/teal_200"
-    app:slider_icon_color="@color/white"
-    app:slider_icon="@drawable/ic_outline_call_24"
-    app:layout_constraintBottom_toTopOf="@+id/banner_container"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"/>
 
 
   <LinearLayout

@@ -11,7 +11,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.chaatyvideo.green.black.romantic.chat"
+        applicationId "com.baatechat.blackwhite.swip.call"
         minSdk 21
         targetSdk 32
         versionCode 1
