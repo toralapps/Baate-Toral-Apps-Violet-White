@@ -73,13 +73,11 @@ class CallNowActivity : BaseClass(), ViewPagerAdapter.Interaction {
         }
 
 
-
-
-
     }
 
     override fun onResume() {
         super.onResume()
+        initShow()
     }
 
     override fun onBlockUser(position: Int, item: Data) {

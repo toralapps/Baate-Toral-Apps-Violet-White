@@ -20,61 +20,64 @@ class GenderActivity : BaseClass() {
     lateinit var backbtn:ImageView
     var perviousIteam:ImageView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gender)
-
-        adContainer = findViewById(R.id.banner_container)
-        AudienceNetworkAds.initialize(this)
-        MobileAds.initialize(this)
-
-        maleradiobtncard = findViewById(R.id.malecard)
-        femaleradiobtncard = findViewById(R.id.femalecard)
-        backbtn = findViewById(R.id.backbtn)
-        nextbtn = findViewById(R.id.elevatedButton)
-        loading_icon = findViewById(R.id.loading_icon)
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_gender)
 
 
-        backbtn.setOnClickListener {
-            super.onBackPressed()
-        }
+            adContainer = findViewById(R.id.banner_container)
+            AudienceNetworkAds.initialize(this)
+            MobileAds.initialize(this)
 
-        nextbtn.setOnClickListener {
-            loading_icon.playAnimation()
-            loading_icon.visibility = View.VISIBLE
-            nextbtn.visibility = View.GONE
-        }
 
-        loading_icon.addAnimatorListener(object : Animator.AnimatorListener{
-            override fun onAnimationStart(p0: Animator?) {
 
+            maleradiobtncard = findViewById(R.id.malecard)
+            femaleradiobtncard = findViewById(R.id.femalecard)
+            backbtn = findViewById(R.id.backbtn)
+            nextbtn = findViewById(R.id.elevatedButton)
+            loading_icon = findViewById(R.id.loading_icon)
+
+
+            backbtn.setOnClickListener {
+                super.onBackPressed()
             }
 
-            override fun onAnimationEnd(p0: Animator?) {
-                val intent = Intent(this@GenderActivity, LocationActivity::class.java)
-                startActivity(intent)
-                loading_icon.visibility = View.GONE
-                nextbtn.visibility = View.VISIBLE
+            nextbtn.setOnClickListener {
+                loading_icon.playAnimation()
+                loading_icon.visibility = View.VISIBLE
+                nextbtn.visibility = View.GONE
             }
 
-            override fun onAnimationCancel(p0: Animator?) {
+            loading_icon.addAnimatorListener(object : Animator.AnimatorListener{
+                override fun onAnimationStart(p0: Animator?) {
 
+                }
+
+                override fun onAnimationEnd(p0: Animator?) {
+                    val intent = Intent(this@GenderActivity, LocationActivity::class.java)
+                    startActivity(intent)
+                    loading_icon.visibility = View.GONE
+                    nextbtn.visibility = View.VISIBLE
+                }
+
+                override fun onAnimationCancel(p0: Animator?) {
+
+                }
+
+                override fun onAnimationRepeat(p0: Animator?) {
+
+                }
+
+            })
+
+            femaleradiobtncard.setOnClickListener {
+                femaleradiobtncard.setImageResource(R.drawable.female_selected)
+                maleradiobtncard.setImageResource(R.drawable.male_not_selected)
             }
 
-            override fun onAnimationRepeat(p0: Animator?) {
-
+            maleradiobtncard.setOnClickListener {
+                maleradiobtncard.setImageResource(R.drawable.male_selected)
+                femaleradiobtncard.setImageResource(R.drawable.female_not_selected)
             }
-
-        })
-
-        femaleradiobtncard.setOnClickListener {
-            femaleradiobtncard.setImageResource(R.drawable.female_selected)
-            maleradiobtncard.setImageResource(R.drawable.male_not_selected)
-        }
-
-        maleradiobtncard.setOnClickListener {
-            maleradiobtncard.setImageResource(R.drawable.male_selected)
-            femaleradiobtncard.setImageResource(R.drawable.female_not_selected)
-        }
 
     }
 
@@ -83,5 +86,10 @@ class GenderActivity : BaseClass() {
         img.isSelected = true
         perviousIteam = img
 //        selected = false
+    }
+
+    override fun onResume() {
+        super.onResume()
+        initShow()
     }
 }

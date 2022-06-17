@@ -22,10 +22,12 @@ import com.baatechat.blackwhite.swip.call.repository.Response
 import com.baatechat.blackwhite.swip.call.singletons.ListOfVideos
 import com.baatechat.blackwhite.swip.call.videolistmodel.Data
 import com.baatechat.blackwhite.swip.call.viewmodels.MainViewModel
+import com.facebook.ads.AudienceNetworkAds
+import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ChatRoomActivity : BaseInterstialAd(), VideoListAdapter.Interaction {
+class ChatRoomActivity : BaseClass(), VideoListAdapter.Interaction {
 
     val mainViewModel: MainViewModel by viewModels()
     lateinit var videolistRecyclerview:RecyclerView
@@ -40,6 +42,9 @@ class ChatRoomActivity : BaseInterstialAd(), VideoListAdapter.Interaction {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat_room)
 
+        adContainer = findViewById(R.id.banner_container)
+        AudienceNetworkAds.initialize(this)
+        MobileAds.initialize(this)
 
 
         window.setFlags(
@@ -117,15 +122,17 @@ class ChatRoomActivity : BaseInterstialAd(), VideoListAdapter.Interaction {
 
     override fun onResume() {
         super.onResume()
+        initShow()
     }
 
     override fun onItemSelected(position: Int, item: Data) {
         ListOfVideos.videos = item
         if(ListOfVideos.videos!= null) {
+            showAddcounter = true
             val intent = Intent(this, CallNowActivity::class.java)
             startActivity(intent)
         }
-        initShow()
+
     }
 
 
@@ -152,4 +159,6 @@ class ChatRoomActivity : BaseInterstialAd(), VideoListAdapter.Interaction {
         }
         return videos!!
     }
+
+
 }

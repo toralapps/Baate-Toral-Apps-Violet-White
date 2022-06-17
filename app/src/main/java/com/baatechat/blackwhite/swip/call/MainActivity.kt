@@ -42,6 +42,7 @@ import com.baatechat.blackwhite.swip.call.repository.Response
 import com.baatechat.blackwhite.swip.call.singletons.ListOfVideos
 import com.baatechat.blackwhite.swip.call.videolistmodel.Data
 import com.baatechat.blackwhite.swip.call.R
+import com.baatechat.blackwhite.swip.call.activitys.BaseClass
 import com.baatechat.blackwhite.swip.call.activitys.BaseInterstialAd
 import com.baatechat.blackwhite.swip.call.activitys.CallNowActivity
 import com.baatechat.blackwhite.swip.call.activitys.TermUseActivity
@@ -51,7 +52,7 @@ import kotlinx.coroutines.delay
 import java.util.*
 
 @AndroidEntryPoint
-class MainActivity : BaseInterstialAd(){
+class MainActivity : AppCompatActivity(){
     var audioflag = true
     var videoflag = true
     var cameraflag = true
@@ -178,8 +179,8 @@ class MainActivity : BaseInterstialAd(){
         }
 
         callend.setOnClickListener {
+            BaseClass.showAddcounter = true
             finish()
-            initShow()
         }
 
         var listener = View.OnTouchListener(function = { view, motionEvent ->
@@ -527,8 +528,8 @@ class MainActivity : BaseInterstialAd(){
         BlockList.saveBlockVideos(this, oldlist)
         Log.d("DEEP", BlockList.getBlockVideos(this).toString())
         Toast.makeText(this,"User is blocked", Toast.LENGTH_SHORT).show()
+        BaseClass.showAddcounter = true
         finish()
-        initShow()
     }
 
     protected fun stopBackgroundThread() {
@@ -579,6 +580,7 @@ class MainActivity : BaseInterstialAd(){
     override fun onDestroy() {
         super.onDestroy()
         releasePlayer()
+        BaseClass.showAddcounter = true
     }
 
     override fun onResume() {
@@ -593,8 +595,8 @@ class MainActivity : BaseInterstialAd(){
 
     override fun onBackPressed() {
         super.onBackPressed()
+        BaseClass.showAddcounter = true
         finish()
-        initShow()
     }
 
 

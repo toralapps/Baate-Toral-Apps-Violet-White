@@ -104,7 +104,7 @@ dependencies {
     implementation 'com.ironsource.sdk:mediationsdk:7.1.13'
     implementation 'com.google.android.gms:play-services-ads:21.0.0'
     implementation 'com.google.android.ads:mediation-test-suite:3.0.0'
-    implementation 'com.facebook.android:audience-network-sdk:6.8.0'
+    implementation 'com.facebook.android:audience-network-sdk:6.11.0'
     implementation 'com.facebook.android:facebook-login:4.30.0'
     implementation 'com.google.ads.mediation:facebook:6.11.0.0'
 

@@ -66,11 +66,10 @@ class AgeActivity : BaseClass() {
             }
 
             override fun onAnimationEnd(p0: Animator?) {
-                val intent = Intent(this@AgeActivity, GenderActivity::class.java)
-                startActivity(intent)
-                initShow()
-                loading_icon.visibility = View.GONE
-                btnNext.visibility = View.VISIBLE
+                    val intent = Intent(this@AgeActivity, GenderActivity::class.java)
+                    startActivity(intent)
+                    loading_icon.visibility = View.GONE
+                    btnNext.visibility = View.VISIBLE
             }
 
             override fun onAnimationCancel(p0: Animator?) {
