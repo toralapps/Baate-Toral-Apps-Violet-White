@@ -27,7 +27,7 @@ import com.google.android.gms.ads.MobileAds
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ChatRoomActivity : BaseClass(), VideoListAdapter.Interaction {
+class ChatRoomActivity : BaseInterstialAd(), VideoListAdapter.Interaction {
 
     val mainViewModel: MainViewModel by viewModels()
     lateinit var videolistRecyclerview:RecyclerView
@@ -42,7 +42,6 @@ class ChatRoomActivity : BaseClass(), VideoListAdapter.Interaction {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat_room)
 
-        adContainer = findViewById(R.id.banner_container)
         AudienceNetworkAds.initialize(this)
         MobileAds.initialize(this)
 
@@ -76,7 +75,6 @@ class ChatRoomActivity : BaseClass(), VideoListAdapter.Interaction {
         blockUser.setOnClickListener {
             val intent = Intent(this, BlockListActivity::class.java)
             startActivity(intent)
-            initShow()
         }
 
 

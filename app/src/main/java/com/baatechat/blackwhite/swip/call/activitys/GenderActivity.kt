@@ -53,6 +53,7 @@ class GenderActivity : BaseClass() {
                 }
 
                 override fun onAnimationEnd(p0: Animator?) {
+                    showAddcounter = true
                     val intent = Intent(this@GenderActivity, LocationActivity::class.java)
                     startActivity(intent)
                     loading_icon.visibility = View.GONE

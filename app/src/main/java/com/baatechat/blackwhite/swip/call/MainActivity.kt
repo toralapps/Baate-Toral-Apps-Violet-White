@@ -179,7 +179,6 @@ class MainActivity : AppCompatActivity(){
         }
 
         callend.setOnClickListener {
-            BaseClass.showAddcounter = true
             finish()
         }
 
@@ -528,7 +527,6 @@ class MainActivity : AppCompatActivity(){
         BlockList.saveBlockVideos(this, oldlist)
         Log.d("DEEP", BlockList.getBlockVideos(this).toString())
         Toast.makeText(this,"User is blocked", Toast.LENGTH_SHORT).show()
-        BaseClass.showAddcounter = true
         finish()
     }
 
@@ -595,7 +593,6 @@ class MainActivity : AppCompatActivity(){
 
     override fun onBackPressed() {
         super.onBackPressed()
-        BaseClass.showAddcounter = true
         finish()
     }
 

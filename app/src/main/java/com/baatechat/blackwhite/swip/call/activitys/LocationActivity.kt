@@ -37,7 +37,7 @@ class LocationActivity : AppCompatActivity(), FlagsAdapter.Interaction {
         adapter.submitList(flags)
 
         backbtn.setOnClickListener {
-            super.onBackPressed()
+            onBackPressed()
         }
 
     }
@@ -47,5 +47,10 @@ class LocationActivity : AppCompatActivity(), FlagsAdapter.Interaction {
         val ageRange = item.category
         intent.putExtra("flagname",ageRange)
         startActivity(intent)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        BaseClass.showAddcounter = false
     }
 }
