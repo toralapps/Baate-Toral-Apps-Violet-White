@@ -8,8 +8,8 @@
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/age_screen_bg"
-        tools:context="com.baatechat.blackwhite.swip.call.activitys.AgeActivity">
+        android:background="@drawable/background_age_selection_screen"
+        tools:context="com.photography.hindishayari.com.photography.hindishayari.activitys.AgeActivity">
 
 
 
@@ -29,23 +29,13 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/sharebtn"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/share_icon"
-            android:layout_margin="10dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <ImageView
-            android:id="@+id/privecypolicybtn"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/privacy_policy_icon"
-            android:layout_margin="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/sharebtn"
-            app:layout_constraintTop_toTopOf="@+id/sharebtn"
-            app:layout_constraintBottom_toBottomOf="@+id/sharebtn"/>
+            android:id="@+id/backbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_previous"
+            android:layout_margin="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/imgcontainer"
@@ -122,7 +112,7 @@
             android:layout_height="70dp"
             android:layout_gravity="center"
             android:layout_margin="25dp"
-            android:src="@drawable/next_btn"
+            android:src="@drawable/ic_next"
             android:text="Next"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"

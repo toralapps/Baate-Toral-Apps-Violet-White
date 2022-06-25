@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/category_screen_background"
-    tools:context="com.baatechat.blackwhite.swip.call.activitys.LocationActivity">
+    android:background="@drawable/background_category_screen"
+    tools:context="com.photography.hindishayari.activitys.LocationActivity">
 
     <ImageView
         android:id="@+id/backbtn"
@@ -17,7 +17,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/ic_baseline_arrow_back_ios_new_24"/>
+        android:src="@drawable/ic_previous"/>
 
 
     <TextView
@@ -27,11 +27,9 @@
         android:text="Select from category"
         android:textColor="@color/white"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@+id/backbtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
-        app:layout_constraintStart_toEndOf="@+id/backbtn"
-        app:layout_constraintTop_toTopOf="@+id/backbtn" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backbtn"/>
 
 
 

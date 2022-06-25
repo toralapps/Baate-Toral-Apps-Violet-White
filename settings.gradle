@@ -16,5 +16,5 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name = "Batte Batte Chat Black Whit Chat"
+rootProject.name = "Baate Photography Hindi Shayari"
 include ':app'
