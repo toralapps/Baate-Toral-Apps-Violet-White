@@ -8,6 +8,7 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -48,7 +49,7 @@
                 android:layout_margin="15dp"
                 android:background="@drawable/like_state"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent" />
 
 
             <com.airbnb.lottie.LottieAnimationView
@@ -60,7 +61,7 @@
                 android:visibility="invisible"
                 app:lottie_rawRes="@raw/like"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -78,30 +79,7 @@
         android:layout_margin="8dp"
         android:elevation="5dp"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-        app:layout_constraintBottom_toTopOf="@+id/address"
-        app:layout_constraintStart_toStartOf="@+id/naviagtionicon"
-        app:layout_constraintEnd_toEndOf="@+id/address"/>
-
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="5 km"
-        android:elevation="5dp"
-        android:textColor="@color/white"
-        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <ImageView
-        android:id="@+id/naviagtionicon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_navigation"
-        android:elevation="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/address"
-        app:layout_constraintTop_toTopOf="@+id/address"
-        app:layout_constraintBottom_toBottomOf="@+id/address"/>
+        app:layout_constraintStart_toStartOf="@+id/cardview"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

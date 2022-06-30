@@ -16,5 +16,5 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name = "Baate Photography Hindi Shayari"
+rootProject.name = "Baate Photography Stylish Fonts"
 include ':app'

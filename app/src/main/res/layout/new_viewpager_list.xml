@@ -105,10 +105,23 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         android:scaleType="centerCrop"
-        app:lottie_rawRes="@raw/call_now_icon"
+        app:lottie_rawRes="@raw/call_animation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/callnowtxt"
         app:layout_constraintTop_toBottomOf="@+id/cityname" />
+
+    <TextView
+        android:id="@+id/callnowtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call now"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

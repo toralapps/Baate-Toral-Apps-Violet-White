@@ -3,6 +3,6 @@
 
     <string name="age_hading1">Are you above 18 ?</string>
     <string name="name">Enter your name</string>
-    <string name="privacy_url">https://baatechatapps.github.io/privacy-policy.html</string>
-    <string name="tearms_use">https://baatechatapps.github.io/terms-of-use.html</string>
+    <string name="privacy_url">https://photographytech.wixsite.com/privacy-policy</string>
+    <string name="tearms_use">https://photographytech.github.io/terms-of-use.html</string>
 </resources>

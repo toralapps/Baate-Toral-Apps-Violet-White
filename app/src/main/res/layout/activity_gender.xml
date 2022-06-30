@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gender_selection_screen"
-    tools:context="com.photography.hindishayari.activitys.GenderActivity">
+    android:background="@drawable/background_screen"
+    tools:context="com.photography.stylishfonts.activitys.GenderActivity">
 
 
     <ImageView
@@ -31,6 +31,18 @@
         app:layout_constraintTop_toBottomOf="@+id/backbtn" />
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Male"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/malecard"
+        app:layout_constraintStart_toStartOf="@+id/malecard"
+        app:layout_constraintTop_toBottomOf="@+id/malecard" />
+
     <ImageView
         android:id="@+id/malecard"
         android:layout_width="150dp"
@@ -44,6 +56,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Female"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/femalecard"
+        app:layout_constraintStart_toStartOf="@+id/femalecard"
+        app:layout_constraintTop_toBottomOf="@+id/malecard" />
+
 
     <ImageView
         android:id="@+id/femalecard"
@@ -51,20 +75,20 @@
         android:layout_height="160dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
-        android:src="@drawable/female_not_seleted"
+        android:src="@drawable/female_not_selected"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/malecard"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
 
-    <View
-        android:id="@+id/border"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@drawable/gradiant_bg"
-        app:layout_constraintBottom_toTopOf="@+id/enternametxt"
-        app:layout_constraintTop_toBottomOf="@+id/malecard" />
+<!--    <View-->
+<!--        android:id="@+id/border"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="2dp"-->
+<!--        android:background="@drawable/gradiant_bg"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/enternametxt"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/malecard" />-->
 
     <TextView
         android:id="@+id/enternametxt"
@@ -85,7 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/white"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:hintTextColor="@color/purple_700"
@@ -95,7 +119,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/malecard"
         app:layout_constraintVertical_bias="0.44">
-
     </EditText>
 
     <de.hdodenhof.circleimageview.CircleImageView

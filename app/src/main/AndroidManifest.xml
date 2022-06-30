@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.photography.hindishayari">
+    package="com.photography.stylishfonts">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.photography.hindishayari.MyApplication"
+        android:name="com.photography.stylishfonts.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,28 +17,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VideoChat">
         <activity
-            android:name="com.photography.hindishayari.activitys.LoadingScreen"
+            android:name="com.photography.stylishfonts.activitys.LoadingScreen"
             android:exported="false" />
         <activity
-            android:name="com.photography.hindishayari.activitys.LocationActivity"
+            android:name="com.photography.stylishfonts.activitys.LocationActivity"
             android:exported="false" />
         <activity
-            android:name="com.photography.hindishayari.activitys.CallNowActivity"
+            android:name="com.photography.stylishfonts.activitys.CallNowActivity"
             android:exported="false" />
         <activity
-            android:name="com.photography.hindishayari.activitys.ChatRoomActivity"
+            android:name="com.photography.stylishfonts.activitys.ChatRoomActivity"
             android:exported="false" />
         <activity
-            android:name="com.photography.hindishayari.activitys.TermUseActivity"
+            android:name="com.photography.stylishfonts.activitys.TermUseActivity"
             android:exported="false" />
         <activity
-            android:name="com.photography.hindishayari.activitys.GenderActivity"
+            android:name="com.photography.stylishfonts.activitys.GenderActivity"
             android:exported="false" />
         <activity
-            android:name="com.photography.hindishayari.activitys.AgeActivity"
+            android:name="com.photography.stylishfonts.activitys.AgeActivity"
             android:exported="false" />
         <activity
-            android:name="com.photography.hindishayari.activitys.SplashScreenActivity"
+            android:name="com.photography.stylishfonts.activitys.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,10 +47,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.photography.hindishayari.MainActivity"
+            android:name="com.photography.stylishfonts.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.photography.hindishayari.blockuser.BlockListActivity"
+            android:name="com.photography.stylishfonts.blockuser.BlockListActivity"
             android:exported="true" />
 
         <meta-data

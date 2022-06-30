@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_category_screen"
-    tools:context="com.photography.hindishayari.activitys.LocationActivity">
+    android:background="@drawable/background_screen"
+    tools:context="com.photography.stylishfonts.activitys.LocationActivity">
 
     <ImageView
         android:id="@+id/backbtn"

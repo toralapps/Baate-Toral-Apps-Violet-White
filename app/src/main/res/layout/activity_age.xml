@@ -8,8 +8,8 @@
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_age_selection_screen"
-        tools:context="com.photography.hindishayari.com.photography.hindishayari.activitys.AgeActivity">
+        android:background="@drawable/background_screen"
+        tools:context="com.photography.stylishfonts.com.photography.hindishayari.activitys.AgeActivity">
 
 
 
@@ -37,6 +37,39 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/imgcontainer"
+            android:orientation="horizontal"
+            android:layout_margin="12dp">
+
+            <ImageView
+                android:id="@+id/shareapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_share"/>
+
+            <ImageView
+                android:id="@+id/rateapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_rate_us"/>
+
+            <ImageView
+                android:id="@+id/privecypolicy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_privacy"/>
+
+        </LinearLayout>
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/imgcontainer"
             android:layout_width="wrap_content"
@@ -46,7 +79,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backbtn"
             app:layout_constraintVertical_bias="0.110000014">
 
             <ImageView
@@ -54,7 +87,7 @@
                 android:layout_width="300dp"
                 android:layout_height="300dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/age_screen_img" />
+                android:src="@drawable/age_screen_logo" />
 
 
         </com.google.android.material.card.MaterialCardView>
@@ -113,8 +146,6 @@
             android:layout_gravity="center"
             android:layout_margin="25dp"
             android:src="@drawable/ic_next"
-            android:text="Next"
-            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
