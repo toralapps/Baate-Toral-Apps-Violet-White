@@ -14,7 +14,8 @@ dependencyResolutionManagement {
         maven {
             url 'https://android-sdk.is.com/'
         }
+        maven { url "https://jitpack.io" }
     }
 }
-rootProject.name = "Baate Photography Stylish Fonts"
+rootProject.name = "Baate Baate Chat Blue White Chat"
 include ':app'

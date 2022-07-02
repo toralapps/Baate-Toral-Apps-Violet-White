@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.photography.stylishfonts">
+    package="com.baatechat.bluewhite.girlvideo.call">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.photography.stylishfonts.MyApplication"
+        android:name="com.baatechat.bluewhite.girlvideo.call.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,28 +17,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VideoChat">
         <activity
-            android:name="com.photography.stylishfonts.activitys.LoadingScreen"
+            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.LoadingScreen"
             android:exported="false" />
         <activity
-            android:name="com.photography.stylishfonts.activitys.LocationActivity"
+            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.LocationActivity"
             android:exported="false" />
         <activity
-            android:name="com.photography.stylishfonts.activitys.CallNowActivity"
+            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.CallNowActivity"
             android:exported="false" />
         <activity
-            android:name="com.photography.stylishfonts.activitys.ChatRoomActivity"
+            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.ChatRoomActivity"
             android:exported="false" />
         <activity
-            android:name="com.photography.stylishfonts.activitys.TermUseActivity"
+            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.TermUseActivity"
             android:exported="false" />
         <activity
-            android:name="com.photography.stylishfonts.activitys.GenderActivity"
+            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.GenderActivity"
             android:exported="false" />
         <activity
-            android:name="com.photography.stylishfonts.activitys.AgeActivity"
+            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.AgeActivity"
             android:exported="false" />
         <activity
-            android:name="com.photography.stylishfonts.activitys.SplashScreenActivity"
+            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,10 +47,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.photography.stylishfonts.MainActivity"
+            android:name="com.baatechat.bluewhite.girlvideo.call.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.photography.stylishfonts.blockuser.BlockListActivity"
+            android:name="com.baatechat.bluewhite.girlvideo.call.blockuser.BlockListActivity"
             android:exported="true" />
 
         <meta-data

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_screen"
-    tools:context="com.photography.stylishfonts.activitys.LocationActivity">
+    tools:context="com.baatechat.bluewhite.girlvideo.call.activitys.LocationActivity">
 
     <ImageView
         android:id="@+id/backbtn"
@@ -24,8 +24,8 @@
         android:id="@+id/titletxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select from category"
-        android:textColor="@color/white"
+        android:text="Select from region"
+        android:textColor="@color/purple_500"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

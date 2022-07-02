@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_screen"
-    tools:context="com.photography.stylishfonts.activitys.GenderActivity">
+    tools:context="com.baatechat.bluewhite.girlvideo.call.activitys.GenderActivity">
 
 
     <ImageView
@@ -23,9 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="choose your gender"
-        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
-        android:textColor="@color/white"
+        android:text="Hi! Your gender is ?"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+        android:textColor="@color/purple_500"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backbtn" />
@@ -38,7 +39,7 @@
         android:layout_marginTop="8dp"
         android:text="Male"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-        android:textColor="@color/white"
+        android:textColor="@color/teal_700"
         app:layout_constraintEnd_toEndOf="@+id/malecard"
         app:layout_constraintStart_toStartOf="@+id/malecard"
         app:layout_constraintTop_toBottomOf="@+id/malecard" />
@@ -63,7 +64,7 @@
         android:layout_marginTop="8dp"
         android:text="Female"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-        android:textColor="@color/white"
+        android:textColor="@color/teal_700"
         app:layout_constraintEnd_toEndOf="@+id/femalecard"
         app:layout_constraintStart_toStartOf="@+id/femalecard"
         app:layout_constraintTop_toBottomOf="@+id/malecard" />
@@ -97,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:text="@string/name"
-        android:textColor="@color/white"
+        android:textColor="@color/teal_700"
         app:layout_constraintBottom_toTopOf="@+id/edittext"
         app:layout_constraintStart_toStartOf="@+id/edittext" />
 
@@ -109,8 +110,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/white"
+        android:backgroundTint="@color/teal_700"
+        android:textColor="@color/purple_500"
         android:textSize="25sp"
         app:hintTextColor="@color/purple_700"
         app:layout_constraintBottom_toBottomOf="parent"
