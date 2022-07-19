@@ -41,7 +41,7 @@ import com.lovechat.red.pink.girl.dating.call.extenstionfunctions.snackBar
 import com.lovechat.red.pink.girl.dating.call.repository.Response
 import com.lovechat.red.pink.girl.dating.call.singletons.ListOfVideos
 import com.lovechat.red.pink.girl.dating.call.videolistmodel.Data
-import com.testexample.ads.NewAddsActivty
+import com.app.ads.NewAddsActivty
 import com.lovechat.red.pink.girl.dating.call.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*

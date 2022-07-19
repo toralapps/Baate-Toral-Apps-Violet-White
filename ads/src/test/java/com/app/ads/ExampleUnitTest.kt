@@ -1,4 +1,4 @@
-package com.testexample.ads
+package com.app.ads
 
 import org.junit.Test
 

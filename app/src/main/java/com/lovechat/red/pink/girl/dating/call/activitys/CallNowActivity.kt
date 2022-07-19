@@ -15,7 +15,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.lovechat.red.pink.girl.dating.call.MainActivity
 import com.lovechat.red.pink.girl.dating.call.R
 import com.lovechat.red.pink.girl.dating.call.adapter.ViewPagerAdapter
-import com.testexample.ads.NewAddsActivty
+import com.app.ads.NewAddsActivty
 import com.lovechat.red.pink.girl.dating.call.extenstionfunctions.snackBar
 import com.lovechat.red.pink.girl.dating.call.livevideocall.activity.ConnectLiveActivity
 import com.lovechat.red.pink.girl.dating.call.networkmanager.ConnectionLiveData

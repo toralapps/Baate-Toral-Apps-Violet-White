@@ -35,7 +35,6 @@
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieAnimationView"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         app:layout_constraintBottom_toBottomOf="parent"

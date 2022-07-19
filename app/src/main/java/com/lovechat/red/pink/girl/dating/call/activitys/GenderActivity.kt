@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import com.airbnb.lottie.LottieAnimationView
 import com.lovechat.red.pink.girl.dating.call.R
-import com.testexample.ads.NewAddsActivty
+import com.app.ads.NewAddsActivty
 import dagger.hilt.android.AndroidEntryPoint
 import de.hdodenhof.circleimageview.CircleImageView
 

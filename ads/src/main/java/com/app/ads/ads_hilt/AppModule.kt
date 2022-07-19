@@ -1,6 +1,6 @@
-package com.testexample.ads.ads_hilt
+package com.app.ads.ads_hilt
 
-import com.testexample.ads.data.remote.AdsApiCall
+import com.app.ads.data.remote.AdsApiCall
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,7 +18,7 @@ object AppModule {
     @Singleton
     fun getAdsApi():AdsApiCall{
         return Retrofit.Builder()
-            .baseUrl("https://raw.githubusercontent.com/printf-app-data/printf-app-data.github.io/main/Ad-Test-API/")
+            .baseUrl("https://raw.githubusercontent.com/lovechatapps/lovechatapps.github.io/main/Ads/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create()
