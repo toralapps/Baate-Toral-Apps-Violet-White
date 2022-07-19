@@ -1,44 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.baatechat.bluewhite.girlvideo.call">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lovechat.red.pink.girl.dating.call">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
     <application
-        android:name="com.baatechat.bluewhite.girlvideo.call.MyApplication"
+        android:name="com.lovechat.red.pink.girl.dating.call.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.VideoChat">
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.VideoChat"
+        tools:targetApi="n">
         <activity
-            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.LoadingScreen"
+            android:name="com.lovechat.red.pink.girl.dating.call.activitys.LoadingScreen"
             android:exported="false" />
         <activity
-            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.LocationActivity"
+            android:name="com.lovechat.red.pink.girl.dating.call.activitys.LocationActivity"
             android:exported="false" />
         <activity
-            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.CallNowActivity"
+            android:name="com.lovechat.red.pink.girl.dating.call.activitys.CallNowActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.lovechat.red.pink.girl.dating.call.livevideocall.activity.CallLiveActivity"
             android:exported="false" />
         <activity
-            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.ChatRoomActivity"
+            android:name="com.lovechat.red.pink.girl.dating.call.livevideocall.activity.ConnectLiveActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.lovechat.red.pink.girl.dating.call.activitys.ChatRoomActivity"
             android:exported="false" />
         <activity
-            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.TermUseActivity"
+            android:name="com.lovechat.red.pink.girl.dating.call.activitys.TermUseActivity"
             android:exported="false" />
         <activity
-            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.GenderActivity"
+            android:name="com.lovechat.red.pink.girl.dating.call.activitys.GenderActivity"
             android:exported="false" />
         <activity
-            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.AgeActivity"
+            android:name="com.lovechat.red.pink.girl.dating.call.activitys.AgeActivity"
             android:exported="false" />
         <activity
-            android:name="com.baatechat.bluewhite.girlvideo.call.activitys.SplashScreenActivity"
+            android:name="com.lovechat.red.pink.girl.dating.call.activitys.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,20 +61,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.baatechat.bluewhite.girlvideo.call.MainActivity"
+            android:name="com.lovechat.red.pink.girl.dating.call.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.baatechat.bluewhite.girlvideo.call.blockuser.BlockListActivity"
+            android:name="com.lovechat.red.pink.girl.dating.call.blockuser.BlockListActivity"
             android:exported="true" />
 
-        <meta-data
-            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-            android:value="true" />
 
-        <activity
-            android:name="com.facebook.ads.AudienceNetworkActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:hardwareAccelerated="true" />
     </application>
 
 </manifest>

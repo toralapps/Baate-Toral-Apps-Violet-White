@@ -17,5 +17,6 @@ dependencyResolutionManagement {
         maven { url "https://jitpack.io" }
     }
 }
-rootProject.name = "Baate Baate Chat Blue White Chat"
+rootProject.name = "Baate Love Chat Red Pink"
 include ':app'
+include ':ads'

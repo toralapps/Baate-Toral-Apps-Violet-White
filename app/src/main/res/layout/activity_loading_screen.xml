@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_screen"
-    tools:context="com.baatechat.bluewhite.girlvideo.call.activitys.LoadingScreen">
+    android:background="@drawable/background_splash_screen"
+    tools:context="com.lovechat.red.pink.girl.dating.call.activitys.LoadingScreen">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView"
@@ -19,13 +19,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <com.airbnb.lottie.LottieAnimationView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Connecting..."
         android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
-        android:textColor="@color/purple_500"
-        android:textStyle="bold"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/connecting_animation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

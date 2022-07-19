@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_screen"
-    tools:context="com.baatechat.bluewhite.girlvideo.call.activitys.GenderActivity">
+    android:background="@drawable/background_splash_screen"
+    tools:context="com.lovechat.red.pink.girl.dating.call.activitys.GenderActivity">
 
 
     <ImageView

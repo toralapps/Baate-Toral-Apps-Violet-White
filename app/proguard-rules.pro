@@ -26,6 +26,21 @@
 # hide the original source file name.
 -renamesourcefileattribute SourceFile
 
+# live call
+
+-keep class org.webrtc.** { *; }
+
+-keep class org.appspot.apprtc.** { *; }
+
+-keep class de.tavendo.autobahn.** { *; }
+
+#facbook adapter rule
+-dontwarn com.facebook.ads.internal.**
+-keeppackagenames com.facebook.*
+-keep public class com.facebook.ads.** {*;}
+-keep public class com.facebook.ads.**
+{ public protected *; }
+
 #-keep class com.mindorks.playground.model.*{;  }
 -keep public class com.google.gson.**
 -keep public class com.google.gson.** {public private protected *;}
