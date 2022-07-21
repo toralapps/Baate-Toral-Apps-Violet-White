@@ -228,4 +228,9 @@ class AgeActivity : NewAddsActivty() {
         return decrypt.encrypt(str,str2)
     }
 
+
+    override fun onResume() {
+        Log.d("DEEP","AgeActivity sub class onResume called")
+        super.onResume()
+    }
 }

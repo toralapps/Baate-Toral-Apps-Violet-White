@@ -100,6 +100,7 @@ class GenderActivity : NewAddsActivty() {
     }
 
     override fun onResume() {
+        Log.d("DEEP","Gender Activity Sub calss called")
         super.onResume()
     }
 }

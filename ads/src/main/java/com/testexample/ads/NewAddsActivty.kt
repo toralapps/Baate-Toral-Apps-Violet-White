@@ -556,6 +556,11 @@ abstract class NewAddsActivty:AppCompatActivity() {
     }
 
 
+    override fun onResume() {
+        super.onResume()
+        Log.d("DEEP","super class resume called")
+    }
+
     override fun onPause() {
         super.onPause()
         bannerLayout?.let {
