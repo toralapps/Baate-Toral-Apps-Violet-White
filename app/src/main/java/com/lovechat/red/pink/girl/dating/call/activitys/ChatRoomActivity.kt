@@ -10,8 +10,14 @@ import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.activity.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.app.ads.AdsViewModel
+import com.app.ads.NewAddsActivty
+import com.app.ads.utils.AdsState
 import com.google.android.material.chip.Chip
 import com.myech.video.bluepink.chat.blockuser.BlockList
 import com.lovechat.red.pink.girl.dating.call.R
@@ -23,12 +29,12 @@ import com.lovechat.red.pink.girl.dating.call.repository.Response
 import com.lovechat.red.pink.girl.dating.call.singletons.ListOfVideos
 import com.lovechat.red.pink.girl.dating.call.videolistmodel.Data
 import com.lovechat.red.pink.girl.dating.call.viewmodels.MainViewModel
-import com.app.ads.NewAddsActivty
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ChatRoomActivity : NewAddsActivty(), VideoListAdapter.Interaction {
-
+    val adsViewModel : AdsViewModel by viewModels()
     val mainViewModel: MainViewModel by viewModels()
     lateinit var videolistRecyclerview:RecyclerView
     lateinit var title:TextView
@@ -39,30 +45,39 @@ class ChatRoomActivity : NewAddsActivty(), VideoListAdapter.Interaction {
     lateinit var listOfVideos:ArrayList<Data>
     lateinit var progressBar: ProgressBar
     var videoCallType:String? = null
+
     override val adContainer: LinearLayout?
         get() = findViewById(R.id.banner_container)
-
-    override fun onAdReday() {
-
-    }
-
-    override fun onAdClose() {
-        val intent = Intent(this, CallNowActivity::class.java)
-        videoCallType?.let {
-            intent.putExtra("videocalltype", videoCallType)
-        }
-        startActivity(intent)
-    }
-
-    override fun onAdOpened() {
-
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat_room)
 
 
+
+        lifecycleScope.launch {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED){
+                adsViewModel.adsState.collect{adsState ->
+                    when(adsState){
+                        is AdsState.AdOpened ->{
+
+                        }
+
+                        is AdsState.AdClosed ->{
+                            val intent = Intent(this@ChatRoomActivity, CallNowActivity::class.java)
+                            videoCallType?.let {
+                                intent.putExtra("videocalltype", videoCallType)
+                            }
+                            startActivity(intent)
+                        }
+
+                        is AdsState.AdReady ->{
+
+                        }
+                    }
+                }
+            }
+        }
 
 
         window.setFlags(

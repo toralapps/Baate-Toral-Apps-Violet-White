@@ -7,38 +7,37 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.activity.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.airbnb.lottie.LottieAnimationView
-import com.lovechat.red.pink.girl.dating.call.R
+import com.app.ads.AdsViewModel
 import com.app.ads.NewAddsActivty
+import com.app.ads.utils.AdsState
+import com.lovechat.red.pink.girl.dating.call.R
 import dagger.hilt.android.AndroidEntryPoint
 import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class GenderActivity : NewAddsActivty() {
+    val adsViewModel : AdsViewModel by viewModels()
     lateinit var maleradiobtncard:ImageView
     lateinit var femaleradiobtncard:ImageView
     lateinit var nextbtn:CircleImageView
     lateinit var loading_icon: LottieAnimationView
     lateinit var backbtn:ImageView
     var perviousIteam:ImageView? = null
+
     override val adContainer: LinearLayout?
         get() = findViewById(R.id.banner_container)
 
-    override fun onAdReday() {
-        Log.d("DEEPCallBack","Add is Ready")
-    }
-
-    override fun onAdClose() {
-
-    }
-
-    override fun onAdOpened() {
-        Log.d("DEEPCallBack","Add is Opened")
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_gender)
+
 
 
             maleradiobtncard = findViewById(R.id.malecard)

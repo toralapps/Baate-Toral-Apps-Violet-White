@@ -24,7 +24,12 @@ import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import com.app.ads.AdsViewModel
+import com.app.ads.NewAddsActivty
+import com.app.ads.utils.AdsState
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
@@ -36,18 +41,20 @@ import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.lovechat.red.pink.girl.dating.call.activitys.CallNowActivity
 import com.myech.video.bluepink.chat.blockuser.BlockList
 import com.lovechat.red.pink.girl.dating.call.extenstionfunctions.snackBar
 import com.lovechat.red.pink.girl.dating.call.repository.Response
 import com.lovechat.red.pink.girl.dating.call.singletons.ListOfVideos
 import com.lovechat.red.pink.girl.dating.call.videolistmodel.Data
-import com.app.ads.NewAddsActivty
 import com.lovechat.red.pink.girl.dating.call.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import java.util.*
 
 @AndroidEntryPoint
 class MainActivity : NewAddsActivty(){
+    val adsViewModel : AdsViewModel by viewModels()
     var audioflag = true
     var videoflag = true
     var cameraflag = true
@@ -87,23 +94,33 @@ class MainActivity : NewAddsActivty(){
     override val adContainer: LinearLayout?
         get() = null
 
-    override fun onAdReday() {
 
-    }
-
-    override fun onAdClose() {
-        finish()
-    }
-
-    override fun onAdOpened() {
-
-    }
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        lifecycleScope.launch {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED){
+                adsViewModel.adsState.collect{adsState ->
+                    when(adsState){
+                        is AdsState.AdOpened ->{
+
+                        }
+
+                        is AdsState.AdClosed ->{
+                            finish()
+                        }
+
+                        is AdsState.AdReady ->{
+
+                        }
+                    }
+                }
+            }
+        }
 
         window.setFlags(
             WindowManager.LayoutParams.FLAG_SECURE,

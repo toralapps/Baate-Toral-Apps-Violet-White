@@ -12,10 +12,10 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
+import com.app.ads.NewAddsActivty
 import com.lovechat.red.pink.girl.dating.call.MainActivity
 import com.lovechat.red.pink.girl.dating.call.R
 import com.lovechat.red.pink.girl.dating.call.adapter.ViewPagerAdapter
-import com.app.ads.NewAddsActivty
 import com.lovechat.red.pink.girl.dating.call.extenstionfunctions.snackBar
 import com.lovechat.red.pink.girl.dating.call.livevideocall.activity.ConnectLiveActivity
 import com.lovechat.red.pink.girl.dating.call.networkmanager.ConnectionLiveData
@@ -41,17 +41,7 @@ class CallNowActivity : NewAddsActivty(), ViewPagerAdapter.Interaction {
     override val adContainer: LinearLayout?
         get() = findViewById(R.id.banner_container)
 
-    override fun onAdReday() {
 
-    }
-
-    override fun onAdClose() {
-
-    }
-
-    override fun onAdOpened() {
-
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

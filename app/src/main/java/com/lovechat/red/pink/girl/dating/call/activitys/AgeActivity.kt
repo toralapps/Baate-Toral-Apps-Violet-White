@@ -15,17 +15,24 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.activity.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.airbnb.lottie.LottieAnimationView
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.lovechat.red.pink.girl.dating.call.R
+import com.app.ads.AdsViewModel
 import com.app.ads.NewAddsActivty
+import com.app.ads.utils.AdsState
+import com.lovechat.red.pink.girl.dating.call.R
 import com.lovechat.red.pink.girl.dating.call.livevideocall.util.CodeDecrypt
 import com.lovechat.red.pink.girl.dating.call.livevideocall.util.Config_Var
 import com.shawnlin.numberpicker.NumberPicker
 import dagger.hilt.android.AndroidEntryPoint
 import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.coroutines.launch
 import org.json.JSONException
 import org.json.JSONObject
 import rateUs
@@ -33,6 +40,7 @@ import shareApp
 
 @AndroidEntryPoint
 class AgeActivity : NewAddsActivty() {
+    val adsViewModel : AdsViewModel by viewModels()
     lateinit var btnNext: CircleImageView
     lateinit var hyperlink: TextView
     lateinit var loading_icon: LottieAnimationView
@@ -46,25 +54,33 @@ class AgeActivity : NewAddsActivty() {
     override val adContainer: LinearLayout?
         get() = findViewById(R.id.banner_container)
 
-    override fun onAdReday() {
-           Log.d("DEEPCallBack","Add is Ready")
-    }
-
-
-    override fun onAdClose() {
-        Log.d("DEEPCallBack","Add is Closed")
-        val intent = Intent(this@AgeActivity, GenderActivity::class.java)
-        startActivity(intent)
-    }
-
-    override fun onAdOpened() {
-        Log.d("DEEPCallBack","Add is Opened")
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_age)
 
+
+        lifecycleScope.launch {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED){
+                adsViewModel.adsState.collect{adsState ->
+                    when(adsState){
+                        is AdsState.AdOpened ->{
+
+                        }
+
+                        is AdsState.AdClosed ->{
+                           Intent(this@AgeActivity,GenderActivity::class.java).apply {
+                               startActivity(this)
+                           }
+                        }
+
+                        is AdsState.AdReady ->{
+
+                        }
+                    }
+                }
+            }
+        }
 
         apiCall()
 

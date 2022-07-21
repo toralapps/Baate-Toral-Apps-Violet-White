@@ -2,17 +2,15 @@ package com.app.ads
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.LinearLayout
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.app.ads.domain.models.AdsItem
-import com.app.ads.domain.models.Data
-import com.app.ads.utils.AdsEvent
-import com.app.ads.utils.Response
-import com.app.ads.utils.SavedAds
 import com.facebook.ads.Ad
 import com.facebook.ads.InterstitialAdListener
 import com.google.ads.mediation.facebook.FacebookMediationAdapter
@@ -25,14 +23,19 @@ import com.ironsource.mediationsdk.IronSourceBannerLayout
 import com.ironsource.mediationsdk.logger.IronSourceError
 import com.ironsource.mediationsdk.sdk.BannerListener
 import com.ironsource.mediationsdk.sdk.InterstitialListener
+import com.app.ads.domain.models.AdsItem
+import com.app.ads.domain.models.Data
+import com.app.ads.utils.AdsEvent
+import com.app.ads.utils.Response
+import com.app.ads.utils.SavedAds
 import kotlinx.coroutines.launch
 
 
-abstract class NewAddsActivty:AppCompatActivity() {
+abstract class NewAddsFragment:Fragment() {
 
     abstract val adContainer:LinearLayout?
     private val adsViewModel : AdsViewModel by viewModels()
-    private var adsRoot: Data? = null
+    private var adsRoot:Data? = null
     var mAdView: AdView? = null
     var bannerLayout: IronSourceBannerLayout? = null
     var madView: com.facebook.ads.AdView? = null
@@ -43,23 +46,22 @@ abstract class NewAddsActivty:AppCompatActivity() {
     var fbInterstitialAd: com.facebook.ads.InterstitialAd? = null
 
 
-    var fabBookAds: AdsItem? = null
+    var fabBookAds:AdsItem? = null
     var ironsourceAds:AdsItem? = null
     var admobAds:AdsItem? = null
 
-
     private val TAG = "DEEPADSLog"
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.d("DEEP","onViewCreated of Super class")
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED){
                 adsViewModel.adsFlow.collect{ response ->
                      when (response) {
                         is Response.Success -> {
                             adsRoot = response.videoList?.data
-                            SavedAds.saveApi(this@NewAddsActivty, adsRoot)
+                            SavedAds.saveApi(requireContext(), adsRoot)
                             if(adsRoot?.showAds == true){
                                 filterAdsNetworkId()
                                 loadInteritialAds()
@@ -70,7 +72,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
 
                         is Response.error -> {
                             Log.d(TAG, response.errorMassage.toString())
-                            adsRoot = SavedAds.getAds(this@NewAddsActivty)
+                            adsRoot = SavedAds.getAds(requireContext())
                             if(adsRoot?.showAds == true){
                                 filterAdsNetworkId()
                                 loadInteritialAds()
@@ -116,6 +118,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
 
     fun loadInteritialAds(){
         adsRoot?.let { adsRoot ->
+            Log.d("deep","load intertital called")
             val firstMonitizationId = adsRoot.ads?.get(0)?.monetizationId
 
             if (firstMonitizationId == 1) //For Facebook Monetization
@@ -124,12 +127,11 @@ abstract class NewAddsActivty:AppCompatActivity() {
             }
             else if (firstMonitizationId == 2) //For AdMob
             {
-
                 loadAdMobInterstitialAd()
 
             } else if (firstMonitizationId == 6) //For IronSoruce
             {
-                loadIronSourceInterstialAd()
+              loadIronSourceInterstialAd()
 
             }
         }
@@ -188,7 +190,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
                 return
             }
             Log.d("DEEP","CALLING LOADINTERSTITAL OF IRONSURCE")
-            IronSource.init(this, ironsourceAds?.adAppKey)
+            IronSource.init(requireActivity(), ironsourceAds?.adAppKey)
             IronSource.loadInterstitial()
             IronSource.setInterstitialListener(object : InterstitialListener {
                 override fun onInterstitialAdReady() {
@@ -220,7 +222,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
     private fun showIronSourceInterstitialAd() {
         try {
             adsViewModel.onAdEvent(AdsEvent.onAdReady)
-            IronSource.init(this, ironsourceAds?.adAppKey)
+            IronSource.init(requireActivity(), ironsourceAds?.adAppKey)
             IronSource.showInterstitial()
             IronSource.setInterstitialListener(object : InterstitialListener {
                 override fun onInterstitialAdReady() {
@@ -229,15 +231,16 @@ abstract class NewAddsActivty:AppCompatActivity() {
                 override fun onInterstitialAdLoadFailed(ironSourceError: IronSourceError) {
                 }
                 override fun onInterstitialAdOpened() {
-                    adsViewModel.onAdEvent(AdsEvent.onAdOpened)
+                   adsViewModel.onAdEvent(AdsEvent.onAdOpened)
                     Log.d("DEEP","IRONSOURCE ADD SHOWING")
                 }
                 override fun onInterstitialAdClosed() {
                     ironsource_isloaded = false
+                    Log.d("DEEP","ONAdd Close")
                     adsViewModel.onAdEvent(AdsEvent.onAdClose)
                 }
                 override fun onInterstitialAdShowSucceeded() {
-                    ironsource_isloaded = false
+                    Log.d("DEEP","ONAdd showed")
                 }
                 override fun onInterstitialAdShowFailed(ironSourceError: IronSourceError) {
                     ironsource_isloaded = false
@@ -260,10 +263,10 @@ abstract class NewAddsActivty:AppCompatActivity() {
         }
         Log.d("DEEP","load ironsource banner called")
        IronSource.destroyBanner(bannerLayout)
-        IronSource.init(this, ironsourceAds?.adAppKey)
+        IronSource.init(requireActivity(), ironsourceAds?.adAppKey)
         Log.d("DEEP","banner init")
         IronSource.setMetaData("Facebook_IS_CacheFlag", "IMAGE")
-        bannerLayout = IronSource.createBanner(this, ISBannerSize.BANNER)
+        bannerLayout = IronSource.createBanner(requireActivity(), ISBannerSize.BANNER)
         Log.d("DEEP","Banner created")
         adContainer.addView(bannerLayout)
         bannerLayout!!.bannerListener = object : BannerListener {
@@ -283,18 +286,20 @@ abstract class NewAddsActivty:AppCompatActivity() {
         }
         IronSource.loadBanner(bannerLayout)
 
-            }
+
+    }
     }
 
     private fun loadAdMobInterstitialAd() {
         try {
+            Log.d("deep","loadadmob is called")
             if(mInterstitialAd != null || admob_isloaded){
                 Log.d("DEEP","Admob Intertisial load call")
                 return
             }
             val adRequest = AdRequest.Builder().build()
             admobAds?.interstitialAdKey?.let  {
-                InterstitialAd.load(this@NewAddsActivty, it, adRequest,
+                InterstitialAd.load(requireContext(), it, adRequest,
                     object : InterstitialAdLoadCallback() {
                         override fun onAdLoaded(interstitialAd: InterstitialAd) {
                             // The mInterstitialAd reference will be null until
@@ -334,7 +339,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
             if (mInterstitialAd != null) {
                 adsViewModel.onAdEvent(AdsEvent.onAdReady)
                 Log.d("DEEP","ADMOB SHOW METHOD CALLED")
-                mInterstitialAd!!.show(this@NewAddsActivty)
+                mInterstitialAd!!.show(requireActivity())
                 mInterstitialAd!!.setFullScreenContentCallback(object :
                     FullScreenContentCallback() {
                     override fun onAdDismissedFullScreenContent() {
@@ -344,7 +349,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
                         Log.d("DEEP", "The ad was dismissed.")
                         val adRequest = AdRequest.Builder().build()
                         admobAds?.interstitialAdKey?.let {
-                            InterstitialAd.load(this@NewAddsActivty,
+                            InterstitialAd.load(requireContext(),
                                 it,
                                 adRequest,
                                 object : InterstitialAdLoadCallback() {
@@ -352,6 +357,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
                                         // The mInterstitialAd reference will be null until
                                         // an ad is loaded.
                                         Log.d("DEEP", "Admob interstitalAd add load Failed second")
+                                        adsViewModel.onAdEvent(AdsEvent.onAdOpened)
                                         mInterstitialAd = interstitialAd
                                         //
                                         //                                    showad(view)
@@ -380,7 +386,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
                     override fun onAdShowedFullScreenContent() {
                         mInterstitialAd = null
                         admob_isloaded = false
-                        adsViewModel.onAdEvent(AdsEvent.onAdOpened)
+                        adsViewModel.onAdEvent(AdsEvent.onAdClose)
                         Log.d("DEEP", "Admob interstitalAd add showing")
                         Log.d("TAG", "The ad was shown.")
                     }
@@ -400,13 +406,12 @@ abstract class NewAddsActivty:AppCompatActivity() {
 
 
     private fun loadAdMobBannerAd() {
-
-        adContainer?.let{adContainer ->
+        adContainer?.let {adContainer ->
         if (adContainer.childCount > 0) {
             adContainer.removeAllViews()
         }
         val adRequest = AdRequest.Builder().build()
-        mAdView = AdView(applicationContext)
+        mAdView = AdView(requireContext())
         admobAds?.let { item ->
             item.bannerAdKey?.let {
                 mAdView!!.adUnitId = it
@@ -435,7 +440,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
         if(fb_isloaded){
             return
         }
-        fbInterstitialAd = com.facebook.ads.InterstitialAd(this, fabBookAds?.interstitialAdKey)
+        fbInterstitialAd = com.facebook.ads.InterstitialAd(requireContext(), fabBookAds?.interstitialAdKey)
         val interstitialAdListener: InterstitialAdListener = object : InterstitialAdListener {
             override fun onInterstitialDisplayed(ad: Ad) {
 
@@ -518,7 +523,6 @@ abstract class NewAddsActivty:AppCompatActivity() {
     }
 
     private fun loadFaceBookBannerAdd() {
-
         adContainer?.let {adContainer ->
         if (adContainer.childCount > 0) {
             adContainer.removeAllViews()
@@ -545,7 +549,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
 
 
         }
-        madView = com.facebook.ads.AdView(this,
+        madView = com.facebook.ads.AdView(requireContext(),
             fabBookAds?.bannerAdKey,
             com.facebook.ads.AdSize.BANNER_HEIGHT_50)
 
@@ -555,6 +559,12 @@ abstract class NewAddsActivty:AppCompatActivity() {
         madView!!.loadAd(madView!!.buildLoadAdConfig().withAdListener(adListener).build())
 
     }
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("DEEP","Super class resume called")
     }
 
     override fun onPause() {

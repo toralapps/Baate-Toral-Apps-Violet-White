@@ -14,11 +14,19 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.app.ads.AdsJavaViewModel;
+import com.app.ads.AdsViewModel;
+import com.app.ads.NewAddsActivty;
+import com.app.ads.NewJavaAddsActivty;
+import com.app.ads.utils.AdsState;
 import com.lovechat.red.pink.girl.dating.call.R;
 import com.lovechat.red.pink.girl.dating.call.livevideocall.util.AppRTCAudioManager;
 import com.lovechat.red.pink.girl.dating.call.livevideocall.util.AppRTCClient;
@@ -57,9 +65,12 @@ import java.util.Set;
 
 import javax.annotation.Nullable;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
 @SuppressWarnings("ALL")
 
-public class CallLiveActivity extends AppCompatActivity implements AppRTCClient.SignalingEvents, PeerConnectionClient.PeerConnectionEvents, CallFragment.OnCallEvents {
+@AndroidEntryPoint
+public class CallLiveActivity extends NewJavaAddsActivty implements AppRTCClient.SignalingEvents, PeerConnectionClient.PeerConnectionEvents, CallFragment.OnCallEvents {
     private static final int CAPTURE_PERMISSION_REQUEST_CODE = 1;
     public static final String EXTRA_AECDUMP_ENABLED = "org.appspot.apprtc.AECDUMP";
     public static final String EXTRA_AUDIOCODEC = "org.appspot.apprtc.AUDIOCODEC";
@@ -143,6 +154,7 @@ public class CallLiveActivity extends AppCompatActivity implements AppRTCClient.
     private final List<VideoSink> remoteSinks = new ArrayList();
     private boolean callControlFragmentVisible = true;
     private boolean micEnabled = true;
+    AdsJavaViewModel  adsViewModel;
 
     @Override // com.app.videocallrandomchat2.PeerConnectionClient.PeerConnectionEvents
     public void onIceDisconnected() {
@@ -150,6 +162,13 @@ public class CallLiveActivity extends AppCompatActivity implements AppRTCClient.
 
     @Override // com.app.videocallrandomchat2.PeerConnectionClient.PeerConnectionEvents
     public void onPeerConnectionClosed() {
+    }
+
+    @androidx.annotation.Nullable
+
+    @Override
+    public LinearLayout getAdContainer() {
+        return null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -185,8 +204,21 @@ public class CallLiveActivity extends AppCompatActivity implements AppRTCClient.
 
         setContentView(R.layout.activity_call_live);
 
+         adsViewModel= new ViewModelProvider(this).get(AdsJavaViewModel.class);
 
-
+        adsViewModel.getAdsState().observe(this, new Observer<AdsState>() {
+            @Override
+            public void onChanged(AdsState adsState) {
+                if (AdsState.AdClosed.INSTANCE.equals(adsState)) {
+                    Log.d("DEEPJAVA","ADS close called");
+                    finish();
+                }else if (AdsState.AdOpened.INSTANCE.equals(adsState)){
+                    Log.d("DEEPJAVA","AdOpen Called");
+                }else if (AdsState.AdReady.INSTANCE.equals(adsState)){
+                    Log.d("DEEPJAVA","AdsReady Called");
+                }
+            }
+        });
 
         this.iceConnected = false;
         PeerConnectionClient.DataChannelParameters dataChannelParameters = null;
@@ -606,7 +638,8 @@ public class CallLiveActivity extends AppCompatActivity implements AppRTCClient.
         } else {
             setResult(-1);
         }
-        finish();
+        Log.d("DEEP","liveCallActivity showadd called");
+        showIntertisialAdd();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -28,10 +28,10 @@ import com.ironsource.mediationsdk.sdk.InterstitialListener
 import kotlinx.coroutines.launch
 
 
-abstract class NewAddsActivty:AppCompatActivity() {
+abstract class NewJavaAddsActivty:AppCompatActivity() {
 
     abstract val adContainer:LinearLayout?
-    private val adsViewModel : AdsViewModel by viewModels()
+    private val adsViewModel : AdsJavaViewModel by viewModels()
     private var adsRoot: Data? = null
     var mAdView: AdView? = null
     var bannerLayout: IronSourceBannerLayout? = null
@@ -59,7 +59,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
                      when (response) {
                         is Response.Success -> {
                             adsRoot = response.videoList?.data
-                            SavedAds.saveApi(this@NewAddsActivty, adsRoot)
+                            SavedAds.saveApi(this@NewJavaAddsActivty, adsRoot)
                             if(adsRoot?.showAds == true){
                                 filterAdsNetworkId()
                                 loadInteritialAds()
@@ -70,7 +70,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
 
                         is Response.error -> {
                             Log.d(TAG, response.errorMassage.toString())
-                            adsRoot = SavedAds.getAds(this@NewAddsActivty)
+                            adsRoot = SavedAds.getAds(this@NewJavaAddsActivty)
                             if(adsRoot?.showAds == true){
                                 filterAdsNetworkId()
                                 loadInteritialAds()
@@ -294,7 +294,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
             }
             val adRequest = AdRequest.Builder().build()
             admobAds?.interstitialAdKey?.let  {
-                InterstitialAd.load(this@NewAddsActivty, it, adRequest,
+                InterstitialAd.load(this@NewJavaAddsActivty, it, adRequest,
                     object : InterstitialAdLoadCallback() {
                         override fun onAdLoaded(interstitialAd: InterstitialAd) {
                             // The mInterstitialAd reference will be null until
@@ -334,7 +334,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
             if (mInterstitialAd != null) {
                 adsViewModel.onAdEvent(AdsEvent.onAdReady)
                 Log.d("DEEP","ADMOB SHOW METHOD CALLED")
-                mInterstitialAd!!.show(this@NewAddsActivty)
+                mInterstitialAd!!.show(this@NewJavaAddsActivty)
                 mInterstitialAd!!.setFullScreenContentCallback(object :
                     FullScreenContentCallback() {
                     override fun onAdDismissedFullScreenContent() {
@@ -344,7 +344,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
                         Log.d("DEEP", "The ad was dismissed.")
                         val adRequest = AdRequest.Builder().build()
                         admobAds?.interstitialAdKey?.let {
-                            InterstitialAd.load(this@NewAddsActivty,
+                            InterstitialAd.load(this@NewJavaAddsActivty,
                                 it,
                                 adRequest,
                                 object : InterstitialAdLoadCallback() {

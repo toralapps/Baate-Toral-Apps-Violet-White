@@ -13,9 +13,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.app.ads.NewAddsActivty
 import com.lovechat.red.pink.girl.dating.call.R
 import com.lovechat.red.pink.girl.dating.call.adapter.FlagsAdapter
-import com.app.ads.NewAddsActivty
 import com.lovechat.red.pink.girl.dating.call.extenstionfunctions.snackBar
 import com.lovechat.red.pink.girl.dating.call.repository.Response
 import com.lovechat.red.pink.girl.dating.call.videolistmodel.Falgs
@@ -32,20 +32,11 @@ class LocationActivity : NewAddsActivty(), FlagsAdapter.Interaction {
     lateinit var proggressBar: ProgressBar
     var videoCallType:String? = null
     val adapter = FlagsAdapter(this)
+
     override val adContainer: LinearLayout?
         get() = findViewById(R.id.banner_container)
 
-    override fun onAdReday() {
 
-    }
-
-    override fun onAdClose() {
-
-    }
-
-    override fun onAdOpened() {
-
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

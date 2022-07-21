@@ -1,6 +1,7 @@
 package com.app.ads
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.app.ads.domain.models.AdsRoot
 import com.app.ads.domain.repository.AdsRepository
@@ -8,6 +9,7 @@ import com.app.ads.utils.AdsEvent
 import com.app.ads.utils.AdsState
 import com.app.ads.utils.Response
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -16,7 +18,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AdsViewModel @Inject constructor(
+class AdsJavaViewModel @Inject constructor(
    private val adsRepository: AdsRepository
 ) :ViewModel() {
 
@@ -25,7 +27,7 @@ class AdsViewModel @Inject constructor(
 
 
     private val _AdsChannel = Channel<AdsState>()
-    val adsState = _AdsChannel.receiveAsFlow()
+    val adsState = _AdsChannel.receiveAsFlow().asLiveData(Dispatchers.Main)
 
     init {
         getAdsFromApi()
