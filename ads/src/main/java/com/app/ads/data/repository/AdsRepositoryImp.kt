@@ -1,11 +1,11 @@
-package com.testexample.ads.data.repository
+package com.app.ads.data.repository
 
 import android.util.Log
-import com.testexample.ads.data.remote.AdsApiCall
-import com.testexample.ads.domain.models.AdsRoot
-import com.testexample.ads.domain.repository.AdsRepository
-import com.testexample.ads.utils.LocalAds
-import com.testexample.ads.utils.Response
+import com.app.ads.data.remote.AdsApiCall
+import com.app.ads.domain.models.AdsRoot
+import com.app.ads.domain.repository.AdsRepository
+import com.app.ads.utils.LocalAds
+import com.app.ads.utils.Response
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

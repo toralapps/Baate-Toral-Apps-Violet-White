@@ -1,7 +1,7 @@
-package com.testexample.ads.ads_hilt
+package com.app.ads.ads_hilt
 
-import com.testexample.ads.data.repository.AdsRepositoryImp
-import com.testexample.ads.domain.repository.AdsRepository
+import com.app.ads.data.repository.AdsRepositoryImp
+import com.app.ads.domain.repository.AdsRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

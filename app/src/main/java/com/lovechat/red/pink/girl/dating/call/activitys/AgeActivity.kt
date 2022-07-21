@@ -20,7 +20,7 @@ import com.android.volley.DefaultRetryPolicy
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.lovechat.red.pink.girl.dating.call.R
-import com.testexample.ads.NewAddsActivty
+import com.app.ads.NewAddsActivty
 import com.lovechat.red.pink.girl.dating.call.livevideocall.util.CodeDecrypt
 import com.lovechat.red.pink.girl.dating.call.livevideocall.util.Config_Var
 import com.shawnlin.numberpicker.NumberPicker

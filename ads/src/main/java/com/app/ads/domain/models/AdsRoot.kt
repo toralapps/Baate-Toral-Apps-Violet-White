@@ -1,4 +1,4 @@
-package com.testexample.ads.domain.models
+package com.app.ads.domain.models
 
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName

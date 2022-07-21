@@ -1,4 +1,4 @@
-package com.testexample.ads
+package com.app.ads
 
 import android.os.Bundle
 import android.util.Log
@@ -20,10 +20,10 @@ import com.ironsource.mediationsdk.IronSourceBannerLayout
 import com.ironsource.mediationsdk.logger.IronSourceError
 import com.ironsource.mediationsdk.sdk.BannerListener
 import com.ironsource.mediationsdk.sdk.InterstitialListener
-import com.testexample.ads.domain.models.AdsItem
-import com.testexample.ads.domain.models.Data
-import com.testexample.ads.utils.Response
-import com.testexample.ads.utils.SavedAds
+import com.app.ads.domain.models.AdsItem
+import com.app.ads.domain.models.Data
+import com.app.ads.utils.Response
+import com.app.ads.utils.SavedAds
 import kotlinx.coroutines.launch
 
 

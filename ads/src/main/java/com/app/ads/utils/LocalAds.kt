@@ -1,6 +1,6 @@
-package com.testexample.ads.utils
+package com.app.ads.utils
 
-import com.testexample.ads.domain.models.AdsRoot
+import com.app.ads.domain.models.AdsRoot
 import retrofit2.Response
 
 object LocalAds {

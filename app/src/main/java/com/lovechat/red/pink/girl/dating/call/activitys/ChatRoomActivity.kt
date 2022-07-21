@@ -23,7 +23,7 @@ import com.lovechat.red.pink.girl.dating.call.repository.Response
 import com.lovechat.red.pink.girl.dating.call.singletons.ListOfVideos
 import com.lovechat.red.pink.girl.dating.call.videolistmodel.Data
 import com.lovechat.red.pink.girl.dating.call.viewmodels.MainViewModel
-import com.testexample.ads.NewAddsActivty
+import com.app.ads.NewAddsActivty
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -1,10 +1,10 @@
-package com.testexample.ads
+package com.app.ads
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.testexample.ads.domain.models.AdsRoot
-import com.testexample.ads.domain.repository.AdsRepository
-import com.testexample.ads.utils.Response
+import com.app.ads.domain.models.AdsRoot
+import com.app.ads.domain.repository.AdsRepository
+import com.app.ads.utils.Response
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

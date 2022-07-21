@@ -92,7 +92,6 @@
 <!--        app:layout_constraintTop_toBottomOf="@+id/malecard" />-->
 
     <TextView
-        android:id="@+id/enternametxt"
         style="@style/TextAppearance.Material3.TitleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

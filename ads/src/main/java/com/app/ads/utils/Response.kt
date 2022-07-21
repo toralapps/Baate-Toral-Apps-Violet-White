@@ -1,4 +1,4 @@
-package com.testexample.ads.utils
+package com.app.ads.utils
 
 sealed class Response<T>(val videoList: T?= null, val errorMassage:String? = null) {
 

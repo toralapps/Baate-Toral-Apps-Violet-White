@@ -1,4 +1,4 @@
-package com.testexample.ads.utils;
+package com.app.ads.utils;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.google.gson.Gson;
-import com.testexample.ads.domain.models.Data;
+import com.app.ads.domain.models.Data;
 
 public class SavedAds {
 

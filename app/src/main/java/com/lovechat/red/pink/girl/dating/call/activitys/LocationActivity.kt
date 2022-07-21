@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lovechat.red.pink.girl.dating.call.R
 import com.lovechat.red.pink.girl.dating.call.adapter.FlagsAdapter
-import com.testexample.ads.NewAddsActivty
+import com.app.ads.NewAddsActivty
 import com.lovechat.red.pink.girl.dating.call.extenstionfunctions.snackBar
 import com.lovechat.red.pink.girl.dating.call.repository.Response
 import com.lovechat.red.pink.girl.dating.call.videolistmodel.Falgs
