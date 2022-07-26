@@ -6,8 +6,8 @@ import retrofit2.http.GET
 
 interface AdsApiCall {
 
-//    @GET("baate-red-pink-chat.json")
-    @GET("test-ads-true.json")
+    @GET("baate-red-pink-chat.json")
+//    @GET("test-ads-true.json")
     suspend fun getAds():Response<AdsRoot>
 
 }
