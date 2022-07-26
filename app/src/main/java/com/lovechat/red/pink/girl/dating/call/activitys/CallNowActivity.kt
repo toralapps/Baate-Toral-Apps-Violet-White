@@ -73,6 +73,7 @@ class CallNowActivity : NewAddsActivty(), ViewPagerAdapter.Interaction {
                     is Response.error -> {
                         snackBar(backbtn, it.errorMassage!!)
                     }
+                    else -> {}
                 }
             }
         }
@@ -113,6 +114,7 @@ class CallNowActivity : NewAddsActivty(), ViewPagerAdapter.Interaction {
                 is Response.error ->{
                     snackBar(viewpager,"Please try after sometimes")
                 }
+                else -> {}
             }
         }
     }
@@ -136,7 +138,10 @@ class CallNowActivity : NewAddsActivty(), ViewPagerAdapter.Interaction {
             "Fail" ->{
                 Toast.makeText(this,"Can't connect. We apologize for the inconvenience. Please try again later.",Toast.LENGTH_SHORT).show()
             }
-
+            "Cache" ->{
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
             else ->{
                 intent.getStringExtra("videocalltype")?.let { it1 -> videoCallType = it1 }
                 permisstionDailog()

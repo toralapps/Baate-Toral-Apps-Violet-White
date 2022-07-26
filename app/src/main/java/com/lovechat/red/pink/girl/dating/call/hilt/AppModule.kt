@@ -17,7 +17,8 @@ object AppModule {
     @Singleton
     fun provideRetrofit(): Retrofit =
         Retrofit.Builder()
-            .baseUrl("https://raw.githubusercontent.com/lovechatapps/lovechatapps.github.io/main/Data/baate-red-pink-chat/")
+           // .baseUrl("https://raw.githubusercontent.com/lovechatapps/lovechatapps.github.io/main/Data/baate-red-pink-chat/")
+            .baseUrl("https://printf-app-data.github.io/Video-Chat-Test-API/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

@@ -153,6 +153,7 @@ class MainActivity : NewAddsActivty(){
                     is Response.error ->{
                             snackBar(reportBtn,"Please try after sometimes")
                     }
+                    else -> {}
                 }
             }
         }
@@ -450,6 +451,7 @@ class MainActivity : NewAddsActivty(){
         simpleExoPlayer?.playWhenReady = true
         simpleExoPlayer?.repeatMode = Player.REPEAT_MODE_OFF
         simpleExoPlayer?.addListener(object: Player.Listener {
+            @Deprecated("Deprecated in Java")
             override fun onPlayerStateChanged(playWhenReady: Boolean, playbackState: Int) {
                 super.onPlayerStateChanged(playWhenReady, playbackState)
                 if (playbackState == ExoPlayer.STATE_BUFFERING) {

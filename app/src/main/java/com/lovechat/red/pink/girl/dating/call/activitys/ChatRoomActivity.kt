@@ -28,6 +28,8 @@ import com.lovechat.red.pink.girl.dating.call.networkmanager.ConnectionLiveData
 import com.lovechat.red.pink.girl.dating.call.repository.Response
 import com.lovechat.red.pink.girl.dating.call.singletons.ListOfVideos
 import com.lovechat.red.pink.girl.dating.call.videolistmodel.Data
+import com.lovechat.red.pink.girl.dating.call.videolistmodel.SavedVideoList
+import com.lovechat.red.pink.girl.dating.call.videolistmodel.VideoList
 import com.lovechat.red.pink.girl.dating.call.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -123,20 +125,7 @@ class ChatRoomActivity : NewAddsActivty(), VideoListAdapter.Interaction {
         mainViewModel.VideoListLiveData.observe(this){
             when(it){
                 is Response.Success -> {
-                    progressBar.visibility = View.GONE
-                    videolistRecyclerview.visibility = View.VISIBLE
-                    Log.d("DEEP", "reposse is success ${it.videoList!!.Status}")
-                    if (it.videoList!!.Data.isNotEmpty()) {
-                        videoCallType = it.videoList.Settings.VideoCall
-                        val unblockUsers = getunblockedUsers(it.videoList!!.Data)
-                        if (unblockUsers.isNotEmpty()) {
-                            adapter.submitList(unblockUsers.shuffled())
-                        } else {
-                            snackBar(blockUser, "Please try later")
-                        }
-                    }else{
-                        snackBar(blockUser, "Please try later")
-                    }
+                  setUpRecyclerView(it.videoList)
                 }
                 is Response.error ->{
                     progressBar.visibility = View.GONE
@@ -151,6 +140,30 @@ class ChatRoomActivity : NewAddsActivty(), VideoListAdapter.Interaction {
 
         }
 
+    }
+
+    fun setUpRecyclerView(video: VideoList?) {
+        progressBar.visibility = View.GONE
+        videolistRecyclerview.visibility = View.VISIBLE
+        video?.let { videoList ->
+            Log.d("DEEP", "reposse is success ${videoList.Status}")
+            if (videoList.Data.isNotEmpty()) {
+                videoCallType = videoList.Settings.VideoCall
+                if (videoCallType == "Cache"){
+                    videoCallType =  SavedVideoList.getVideos(this)?.let {
+                         it.Settings.VideoCall
+                    } ?: "Prank"
+                    }
+                val unblockUsers = getunblockedUsers(videoList.Data)
+                 if (unblockUsers.isNotEmpty()) {
+                    adapter.submitList(unblockUsers.shuffled())
+                } else {
+                    snackBar(blockUser, "Please try later")
+                }
+            }else{
+                snackBar(blockUser, "Please try later")
+            }
+        }
     }
 
     override fun onResume() {

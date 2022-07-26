@@ -19,6 +19,8 @@ import com.lovechat.red.pink.girl.dating.call.adapter.FlagsAdapter
 import com.lovechat.red.pink.girl.dating.call.extenstionfunctions.snackBar
 import com.lovechat.red.pink.girl.dating.call.repository.Response
 import com.lovechat.red.pink.girl.dating.call.videolistmodel.Falgs
+import com.lovechat.red.pink.girl.dating.call.videolistmodel.SavedVideoList
+import com.lovechat.red.pink.girl.dating.call.videolistmodel.VideoList
 import com.lovechat.red.pink.girl.dating.call.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import openOtherApp
@@ -70,7 +72,8 @@ class LocationActivity : NewAddsActivty(), FlagsAdapter.Interaction {
                     adapter.submitList(flags)
                     Log.d("DEEP", "reposse is success ${it.videoList!!.Status}")
                     if (it.videoList!!.Data.isNotEmpty()) {
-                        videoCallType = it.videoList.Settings.VideoCall
+                       setUpVideoCallType(it.videoList.Settings.VideoCall,it.videoList)
+
 
                     }else{
                         snackBar(backbtn, "Please try later")
@@ -91,25 +94,60 @@ class LocationActivity : NewAddsActivty(), FlagsAdapter.Interaction {
 
     }
 
-    override fun onItemSelected(position: Int, item: Falgs) {
-        videoCallType?.let {
+
+    fun setUpVideoCallType(videoCall: String, videoList: VideoList) {
+        videoCall.let {
             if(it == "Fail"){
-                Toast.makeText(this,"Can't connect. We apologize for the inconvenience. Please try again later.",Toast.LENGTH_SHORT).show()
+                videoCallType = videoCall
             }else if(it == "Prank"){
-                Intent(this@LocationActivity, ChatRoomActivity::class.java).apply {
-                    putExtra("flagname",item.category)
-                    startActivity(this)
-                }
+                SavedVideoList.saveVideos(this,videoList)
+                videoCallType = videoCall
             }else if(it == "Live"){
-                Intent(this@LocationActivity, ChatRoomActivity::class.java).apply {
-                    putExtra("flagname",item.category)
-                    startActivity(this)
+                SavedVideoList.saveVideos(this,videoList)
+                videoCallType = videoCall
+            }else if (it == "Cache"){
+                val video = SavedVideoList.getVideos(this)
+                videoCallType = video?.let {
+                    Log.d("DEEP","shreddata is not null")
+                     it.Settings.VideoCall
+                } ?: "Prank"
+
+            }else{
+                SavedVideoList.saveVideos(this,videoList)
+                videoCallType = videoCall
+            }
+        }
+
+    }
+
+    override fun onItemSelected(position: Int, item: Falgs) {
+        if(SavedVideoList.getVideos(this) != null) {
+            videoCallType?.let {
+                if (it == "Fail") {
+                    Toast.makeText(this,
+                        "Can't connect. We apologize for the inconvenience. Please try again later.",
+                        Toast.LENGTH_SHORT).show()
+                } else if (it == "Prank") {
+                    Intent(this@LocationActivity, ChatRoomActivity::class.java).apply {
+                        putExtra("flagname", item.category)
+                        startActivity(this)
+                    }
+                } else if (it == "Live") {
+                    Intent(this@LocationActivity, ChatRoomActivity::class.java).apply {
+                        putExtra("flagname", item.category)
+                        startActivity(this)
+                    }
+                }  else {
+                    permisstionDailog()
                 }
+            } ?: Intent(this@LocationActivity, ChatRoomActivity::class.java).apply {
+                startActivity(this)
             }
-            else{
-                permisstionDailog()
-            }
-        } ?: Intent(this@LocationActivity, ChatRoomActivity::class.java).apply { startActivity(this) }
+        } else {
+            Toast.makeText(this,
+                "Can't connect. We apologize for the inconvenience. Please try again later.",
+                Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun permisstionDailog(){
