@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_splash_screen"
-    tools:context="com.lovechat.red.pink.girl.dating.call.activitys.GenderActivity">
+    tools:context="com.lovechat.red.pink.girl.dating.call.com.lovechat.maroon.white.live.vodeo.call.activitys.GenderActivity">
 
 
     <ImageView
@@ -156,7 +156,7 @@
 
     <LinearLayout
         android:id="@+id/banner_container"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_gravity="bottom|center"

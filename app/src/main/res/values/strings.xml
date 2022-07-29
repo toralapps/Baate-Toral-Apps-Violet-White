@@ -5,7 +5,7 @@
     <string name="name">Enter your name</string>
     <string name="privacy_url">https://baatechatapps.github.io/privacy-policy.html</string>
     <string name="tearms_use">https://baatechatapps.github.io/terms-of-use.html</string>
-    <string name="live_video_call">Live video call</string>
+    <string name="live_video_call">Video call</string>
 
     <string name="capture_format_change_text">Slide to change capture format</string>
     <string name="pref_aecdump_default">false</string>

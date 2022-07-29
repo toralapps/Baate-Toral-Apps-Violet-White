@@ -25,6 +25,14 @@ import com.ironsource.mediationsdk.IronSourceBannerLayout
 import com.ironsource.mediationsdk.logger.IronSourceError
 import com.ironsource.mediationsdk.sdk.BannerListener
 import com.ironsource.mediationsdk.sdk.InterstitialListener
+import com.unity3d.ads.*
+import com.unity3d.mediation.*
+import com.unity3d.mediation.errors.LoadError
+import com.unity3d.mediation.errors.SdkInitializationError
+import com.unity3d.mediation.errors.ShowError
+import com.unity3d.services.banners.BannerErrorInfo
+import com.unity3d.services.banners.BannerView
+import com.unity3d.services.banners.UnityBannerSize
 import kotlinx.coroutines.launch
 
 
@@ -39,20 +47,23 @@ abstract class NewAddsActivty:AppCompatActivity() {
     var fb_isloaded:Boolean=false
     var admob_isloaded:Boolean=false
     var ironsource_isloaded:Boolean=false
+    var unityMediationisLoaded:Boolean = false
     var mInterstitialAd: InterstitialAd? = null
+    var UnityMediationinterstitialAd:com.unity3d.mediation.InterstitialAd? = null
+    var unityInterstitalAdLoaded:Boolean = false
     var fbInterstitialAd: com.facebook.ads.InterstitialAd? = null
 
 
     var fabBookAds: AdsItem? = null
     var ironsourceAds:AdsItem? = null
     var admobAds:AdsItem? = null
+    var unityAds:AdsItem? = null
 
 
     private val TAG = "DEEPADSLog"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED){
                 adsViewModel.adsFlow.collect{ response ->
@@ -111,6 +122,12 @@ abstract class NewAddsActivty:AppCompatActivity() {
             if(it.isNotEmpty()) it.get(0) else null
         }
 
+        unityAds = adsRoot?.ads?.filter {
+            it?.monetizationId == 5
+        }?.let{
+            if(it.isNotEmpty()) it.get(0) else null
+        }
+
     }
 
 
@@ -130,6 +147,9 @@ abstract class NewAddsActivty:AppCompatActivity() {
             } else if (firstMonitizationId == 6) //For IronSoruce
             {
                 loadIronSourceInterstialAd()
+
+            }else if(firstMonitizationId == 5){
+               initUnityintestitalAds()
 
             }
         }
@@ -151,6 +171,8 @@ abstract class NewAddsActivty:AppCompatActivity() {
                 } else if (firstMonitizationId == 6) //For IronSoruce
                 {
                     loadIronSourceBannerAd()
+                }else if(firstMonitizationId == 5){
+                    loadUnityBannerAd()
                 }
             }
         }
@@ -173,6 +195,9 @@ abstract class NewAddsActivty:AppCompatActivity() {
            {
                Log.d("DEEP","ADMOBADD SHOW CALL")
                showAdMobInterstialAd()
+           }else if(unityInterstitalAdLoaded){
+               Log.d("DEEP","UntyAd SHOW CALL")
+               showUnityinterstitalAds()
            }
            else{
                adsViewModel.onAdEvent(AdsEvent.onAdClose)
@@ -216,6 +241,34 @@ abstract class NewAddsActivty:AppCompatActivity() {
         }
     }
 
+    fun loadUnityBannerAd(){
+        adContainer?.let {
+            if (it.childCount > 0) {
+                it.removeAllViews()
+            }
+            Log.d("DEEP","unity called")
+            UnityAds.initialize(getApplicationContext(), unityAds?.adAppKey, true)
+            val unityBannerListener = object : BannerView.Listener(){
+                override fun onBannerLoaded(bannerAdView: BannerView?) {
+                    super.onBannerLoaded(bannerAdView)
+                    Log.d("DEEP","UnityBAner Add loaded")
+                }
+
+                override fun onBannerFailedToLoad(
+                    bannerAdView: BannerView?,
+                    errorInfo: BannerErrorInfo?,
+                ) {
+                 Log.d("DEEP","Unity banner Add load failed")
+                }
+            }
+
+            val unityAdview = BannerView(this,unityAds?.bannerAdKey, UnityBannerSize(320,50))
+            unityAdview.load()
+            it.addView(unityAdview)
+        }
+
+
+    }
 
     private fun showIronSourceInterstitialAd() {
         try {
@@ -263,6 +316,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
         IronSource.init(this, ironsourceAds?.adAppKey)
         Log.d("DEEP","banner init")
         IronSource.setMetaData("Facebook_IS_CacheFlag", "IMAGE")
+                IronSource.setMetaData("UnityAds_coppa","true")
         bannerLayout = IronSource.createBanner(this, ISBannerSize.BANNER)
         Log.d("DEEP","Banner created")
         adContainer.addView(bannerLayout)
@@ -368,7 +422,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
                                     }
 
                                 })
-                        }
+                        } ?: adsViewModel.onAdEvent(AdsEvent.onAdClose)
                     }
 
                     override fun onAdFailedToShowFullScreenContent(adError: AdError) {
@@ -446,7 +500,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
 
             override fun onError(p0: Ad?, p1: com.facebook.ads.AdError?) {
                 Log.d("DEEP","failed facebook  interstialAd")
-                loadIronSourceInterstialAd()
+                initUnityintestitalAds()
                 //   showAdMobInterstialAd()
             }
 
@@ -482,7 +536,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
                 Log.d("DEEP","facBook add excaption")
 
             }
-        }
+        } ?: adsViewModel.onAdEvent(AdsEvent.onAdClose)
         val interstitialAdListener: InterstitialAdListener = object : InterstitialAdListener {
             override fun onInterstitialDisplayed(ad: Ad) {
                 // Interstitial ad displayed callback
@@ -541,6 +595,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
             }
 
             override fun onLoggingImpression(p0: Ad?) {
+
             }
 
 
@@ -555,6 +610,176 @@ abstract class NewAddsActivty:AppCompatActivity() {
         madView!!.loadAd(madView!!.buildLoadAdConfig().withAdListener(adListener).build())
 
     }
+    }
+
+
+    fun loadMediationUnityInterstitialAd(){
+        unityAds?.let {unityads ->
+
+            if(unityMediationisLoaded){
+                Log.d("DEEP","Unity Ad is loaded return called")
+                return
+            }
+             UnityMediationinterstitialAd =
+                unityads.interstitialAdKey?.let { com.unity3d.mediation.InterstitialAd(this, "interstitialAdUnitId") }
+
+            val loadListener: IInterstitialAdLoadListener = object : IInterstitialAdLoadListener {
+                override fun onInterstitialLoaded(p0: com.unity3d.mediation.InterstitialAd?) {
+                    unityMediationisLoaded = true
+                    Log.d("DEEP","unity interstitialAds loaded")
+                }
+
+                override fun onInterstitialFailedLoad(
+                    p0: com.unity3d.mediation.InterstitialAd?,
+                    p1: LoadError?,
+                    p2: String?,
+                ) {
+                        UnityMediationinterstitialAd = null
+                        loadIronSourceInterstialAd()
+                    Log.d("DEEP","unity interstitialAds load failed ${p2}")
+                }
+            }
+            UnityMediationinterstitialAd?.load(loadListener)
+        }
+
+    }
+
+   private fun initUnityintestitalAds(){
+    unityAds?.let {unityads ->
+        UnityAds.initialize(this,unityads.adAppKey,true,object :IUnityAdsInitializationListener{
+            override fun onInitializationComplete() {
+                loadUnityinterstialAds()
+            }
+
+            override fun onInitializationFailed(
+                error: UnityAds.UnityAdsInitializationError?,
+                message: String?,
+            ) {
+                    Log.d("DEEP","Unity initialization failed ${message.toString()}")
+            }
+
+        })
+
+    }
+    }
+
+    private fun loadUnityinterstialAds() {
+        if (unityInterstitalAdLoaded) {
+            Log.d("DEEP","return to call from unityinterstial")
+            return
+        }
+        val loadListener = object : IUnityAdsLoadListener {
+            override fun onUnityAdsAdLoaded(placementId: String?) {
+                unityInterstitalAdLoaded = true
+            }
+
+            override fun onUnityAdsFailedToLoad(
+                placementId: String?,
+                error: UnityAds.UnityAdsLoadError?,
+                message: String?,
+            ) {
+                Log.e("UnityAdsExample", "Unity Ads failed to load ad for $placementId with error: [$error] $message");
+                loadIronSourceInterstialAd()
+            }
+        }
+        unityAds?.let {
+            UnityAds.load(it.interstitialAdKey,loadListener)
+        }
+    }
+
+    private fun showUnityinterstitalAds(){
+        adsViewModel.onAdEvent(AdsEvent.onAdReady)
+        val showListener = object :IUnityAdsShowListener{
+            override fun onUnityAdsShowFailure(
+                placementId: String?,
+                error: UnityAds.UnityAdsShowError?,
+                message: String?,
+            ) {
+                unityInterstitalAdLoaded = false
+                Log.d("UnityAdsExample", "Unity Ads failed to show ad for $placementId with error: [$error] $message")
+                adsViewModel.onAdEvent(AdsEvent.onAdClose)
+            }
+
+            override fun onUnityAdsShowStart(placementId: String?) {
+                Log.d("UnityAdsExample", "onUnityAdsShowStart: $placementId");
+                adsViewModel.onAdEvent(AdsEvent.onAdOpened)
+
+            }
+
+            override fun onUnityAdsShowClick(placementId: String?) {
+                unityInterstitalAdLoaded = false
+
+                Log.d("UnityAdsExample", "onUnityAdsShowClick: $placementId");
+            }
+
+            override fun onUnityAdsShowComplete(
+                placementId: String?,
+                state: UnityAds.UnityAdsShowCompletionState?,
+            ) {
+                unityInterstitalAdLoaded = false
+                Log.d("UnityAdsExample", "onUnityAdsShowComplete: " + placementId);
+                adsViewModel.onAdEvent(AdsEvent.onAdClose)
+            }
+
+        }
+        unityAds?.let {
+            UnityAds.show(this, it.interstitialAdKey, UnityAdsShowOptions(), showListener)
+        } ?: adsViewModel.onAdEvent(AdsEvent.onAdClose)
+
+    }
+
+    fun showMediationUnityinterstitalAds(){
+        UnityMediationinterstitialAd?.let {
+            adsViewModel.onAdEvent(AdsEvent.onAdReady)
+            val showListner = object : IInterstitialAdShowListener{
+                override fun onInterstitialShowed(p0: com.unity3d.mediation.InterstitialAd?) {
+                    adsViewModel.onAdEvent(AdsEvent.onAdOpened)
+                    Log.d("DEEP","The unityad has started to show.")
+                }
+
+                override fun onInterstitialClicked(p0: com.unity3d.mediation.InterstitialAd?) {
+                    Log.d("DEEP"," The user has selected the unityad.")
+                }
+
+                override fun onInterstitialClosed(p0: com.unity3d.mediation.InterstitialAd?) {
+                    Log.d("DEEP","The unityAd has finished showing")
+                    adsViewModel.onAdEvent(AdsEvent.onAdClose)
+                }
+
+                override fun onInterstitialFailedShow(
+                    p0: com.unity3d.mediation.InterstitialAd?,
+                    p1: ShowError?,
+                    p2: String?,
+                ) {
+                        Log.d("DEEP","An error occurred during the unityAd showtime.")
+                    adsViewModel.onAdEvent(AdsEvent.onAdClose)
+                }
+
+            }
+        }?: adsViewModel.onAdEvent(AdsEvent.onAdClose)
+
+    }
+
+     private fun initUnityMediationSdk(){
+            unityAds?.let {unityads ->
+                val configuration = InitializationConfiguration.builder()
+                    .setGameId(unityads.adAppKey)
+                    .setInitializationListener(object : IInitializationListener {
+                        override fun onInitializationComplete() {
+                            // Unity Mediation is initialized. Try loading an ad.
+                            Log.d("DEEP","Unity Mediation is successfully initialized.")
+                        }
+
+                        override fun onInitializationFailed(errorCode: SdkInitializationError?, msg: String?) {
+                            // Unity Mediation failed to initialize. Printing failure reason...
+                            Log.d("DEEP","Unity Mediation Failed to Initialize : $msg")
+                        }
+                    }).build()
+
+                UnityMediation.initialize(configuration)
+
+            }
+
     }
 
     override fun onPause() {
