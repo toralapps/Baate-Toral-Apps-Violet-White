@@ -20,6 +20,6 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name = "Baate Love Chat Maroon White"
+rootProject.name = "Baate Love Chat Light Green White"
 include ':app'
 include ':ads'

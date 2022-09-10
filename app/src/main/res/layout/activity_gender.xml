@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_splash_screen"
-    tools:context="com.lovechat.red.pink.girl.dating.call.com.lovechat.maroon.white.live.vodeo.call.activitys.GenderActivity">
+    android:background="@drawable/background_of_all_screen"
+    tools:context="com.lovechat.lightgreen.white.meet.live.chat.activitys.GenderActivity">
 
 
     <ImageView
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Hi! Your gender is ?"
+        android:text="Choose your gender"
         android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
         android:textColor="@color/purple_500"
         android:textStyle="bold"
@@ -121,12 +121,12 @@
         app:layout_constraintVertical_bias="0.44">
     </EditText>
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/elevatedButton"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_next"
+        android:src="@drawable/next_button"
         android:text="Next"
         app:iconGravity="textEnd"
         app:iconSize="30dp"

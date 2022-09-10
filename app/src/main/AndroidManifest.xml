@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.lovechat.maroon.white.live.vodeo.call">
+    package="com.lovechat.lightgreen.white.meet.live.chat">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
     <application
-        android:name="com.lovechat.maroon.white.live.vodeo.call.MyApplication"
+        android:name="com.lovechat.lightgreen.white.meet.live.chat.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,36 +23,36 @@
         android:theme="@style/Theme.VideoChat"
         tools:targetApi="n">
         <activity
-            android:name="com.lovechat.maroon.white.live.vodeo.call.activitys.LoadingScreen"
+            android:name="com.lovechat.lightgreen.white.meet.live.chat.activitys.LoadingScreen"
             android:exported="false" />
         <activity
-            android:name="com.lovechat.maroon.white.live.vodeo.call.activitys.LocationActivity"
+            android:name="com.lovechat.lightgreen.white.meet.live.chat.activitys.LocationActivity"
             android:exported="false" />
         <activity
-            android:name="com.lovechat.maroon.white.live.vodeo.call.activitys.CallNowActivity"
-            android:exported="false" />
-
-        <activity
-            android:name="com.lovechat.maroon.white.live.vodeo.call.livevideocall.activity.CallLiveActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.lovechat.maroon.white.live.vodeo.call.livevideocall.activity.ConnectLiveActivity"
+            android:name="com.lovechat.lightgreen.white.meet.live.chat.activitys.CallNowActivity"
             android:exported="false" />
 
         <activity
-            android:name="com.lovechat.maroon.white.live.vodeo.call.activitys.ChatRoomActivity"
+            android:name="com.lovechat.lightgreen.white.meet.live.chat.livevideocall.activity.CallLiveActivity"
             android:exported="false" />
         <activity
-            android:name="com.lovechat.maroon.white.live.vodeo.call.activitys.TermUseActivity"
+            android:name="com.lovechat.lightgreen.white.meet.live.chat.livevideocall.activity.ConnectLiveActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.lovechat.lightgreen.white.meet.live.chat.activitys.ChatRoomActivity"
             android:exported="false" />
         <activity
-            android:name="com.lovechat.maroon.white.live.vodeo.call.activitys.GenderActivity"
+            android:name="com.lovechat.lightgreen.white.meet.live.chat.activitys.TermUseActivity"
             android:exported="false" />
         <activity
-            android:name="com.lovechat.maroon.white.live.vodeo.call.activitys.AgeActivity"
+            android:name="com.lovechat.lightgreen.white.meet.live.chat.activitys.GenderActivity"
             android:exported="false" />
         <activity
-            android:name="com.lovechat.maroon.white.live.vodeo.call.activitys.SplashScreenActivity"
+            android:name="com.lovechat.lightgreen.white.meet.live.chat.activitys.AgeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.lovechat.lightgreen.white.meet.live.chat.activitys.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,10 +61,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.lovechat.maroon.white.live.vodeo.call.MainActivity"
+            android:name="com.lovechat.lightgreen.white.meet.live.chat.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.lovechat.maroon.white.live.vodeo.call.blockuser.BlockListActivity"
+            android:name="com.lovechat.lightgreen.white.meet.live.chat.blockuser.BlockListActivity"
             android:exported="true" />
 
 

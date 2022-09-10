@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_splash_srceen">
+    android:background="@drawable/background_splash_screen">
 
 
     <ImageView
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/splash_animation" />
+        app:lottie_rawRes="@raw/loading_splash_animation" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

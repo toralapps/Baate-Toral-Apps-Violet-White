@@ -7,6 +7,18 @@
     android:layout_marginBottom="10dp">
 
 
+    <TextView
+        android:id="@+id/categorytxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Spanish"
+        android:textColor="@color/teal_200"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="wrap_content"
@@ -14,8 +26,9 @@
         android:layout_marginTop="10dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/categorytxt">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -37,20 +50,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="18 to 25"
+                android:visibility="gone"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
+                android:id="@+id/nextbtn"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginEnd="18dp"
                 android:layout_marginBottom="18dp"
-                android:src="@drawable/next"
-                android:visibility="gone"
+                android:src="@drawable/right_arrow"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -64,22 +79,24 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp"
         android:src="@drawable/cross_button"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/likebtn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardview" />
 
     <ImageView
         android:id="@+id/likebtn"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/category_like_button"
-        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/reportbtn"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/closebtn"
         app:layout_constraintTop_toBottomOf="@+id/cardview" />
 
@@ -87,27 +104,28 @@
         android:id="@+id/likeanimation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        app:lottie_rawRes="@raw/category_animation"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/reportbtn"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/closebtn"
-        app:layout_constraintTop_toBottomOf="@+id/cardview" />
+        app:layout_constraintTop_toBottomOf="@+id/cardview"
+        app:lottie_rawRes="@raw/category_animation" />
 
 
     <ImageView
         android:id="@+id/reportbtn"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/report_button"
-        android:layout_marginBottom="15dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/report_button"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/likebtn"
         app:layout_constraintTop_toBottomOf="@+id/cardview" />
 
