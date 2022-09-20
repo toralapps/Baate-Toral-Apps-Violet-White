@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_of_all_screen"
-    tools:context="com.lovechat.lightgreen.white.meet.live.chat.activitys.CallNowActivity">
+    android:background="@drawable/backgroound_call_now_screen"
+    tools:context="com.footballchat.orangewhite.videochat.call.activitys.CallNowActivity">
 
 
   <ImageView

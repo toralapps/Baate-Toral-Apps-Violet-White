@@ -41,6 +41,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/imgcontainer"
             android:orientation="horizontal"
             android:layout_margin="12dp">
@@ -84,7 +85,7 @@
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="300dp"
-                android:layout_height="300dp"
+                android:layout_height="200dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/age_screen_img" />
 
@@ -123,7 +124,7 @@
                 android:textAlignment="center"
                 android:layout_marginBottom="20dp"
                 android:text="@string/age_hading1"
-                android:textColor="@color/teal_200" />
+                android:textColor="@color/black" />
 
 
             <TextView
@@ -134,29 +135,29 @@
                 android:layout_marginEnd="10dp"
                 android:text="This app requires you to be 18 years or older to continue"
                 android:textAlignment="center"
-                android:textColor="@color/teal_200" />
+                android:textColor="@color/black" />
         </LinearLayout>
 
 
-        <ImageView
+        <Button
             android:id="@+id/filledButton"
             android:layout_width="150dp"
             android:layout_height="70dp"
-            android:layout_gravity="center"
             android:layout_margin="25dp"
-            android:src="@drawable/next_button"
+            android:text="start"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/container" />
 
 
+
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/loading_icon"
-            android:layout_width="300dp"
-            android:layout_height="120dp"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
             android:layout_margin="20dp"
-            android:scaleType="centerCrop"
             android:visibility="gone"
             app:lottie_rawRes="@raw/loading"
             app:layout_constraintEnd_toEndOf="parent"
@@ -172,7 +173,7 @@
             android:layout_marginRight="8dp"
             android:gravity="center_horizontal"
             android:text="By using Video Call app you agree to our Privacy Policy and Terms use "
-            android:textColor="@color/teal_200"
+            android:textColor="@color/black"
             android:textSize="13sp"
             app:layout_constraintBottom_toTopOf="@+id/banner_container"
             app:layout_constraintEnd_toEndOf="parent"

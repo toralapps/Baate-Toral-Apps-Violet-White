@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_of_all_screen"
-    tools:context="com.lovechat.lightgreen.white.meet.live.chat.activitys.GenderActivity">
+    android:background="@drawable/background_start_screen"
+    tools:context="com.footballchat.orangewhite.videochat.call.activitys.GenderActivity">
 
 
     <ImageView
@@ -25,7 +25,7 @@
         android:layout_marginTop="15dp"
         android:text="Choose your gender"
         android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,7 @@
         android:layout_marginTop="8dp"
         android:text="Male"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/malecard"
         app:layout_constraintStart_toStartOf="@+id/malecard"
         app:layout_constraintTop_toBottomOf="@+id/malecard" />
@@ -64,7 +64,7 @@
         android:layout_marginTop="8dp"
         android:text="Female"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/femalecard"
         app:layout_constraintStart_toStartOf="@+id/femalecard"
         app:layout_constraintTop_toBottomOf="@+id/malecard" />
@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:text="@string/name"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/edittext"
         app:layout_constraintStart_toStartOf="@+id/edittext" />
 
@@ -121,15 +121,14 @@
         app:layout_constraintVertical_bias="0.44">
     </EditText>
 
-    <ImageView
+    <Button
         android:id="@+id/elevatedButton"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_marginTop="10dp"
-        android:src="@drawable/next_button"
+        android:backgroundTint="@color/black"
         android:text="Next"
-        app:iconGravity="textEnd"
-        app:iconSize="30dp"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         app:layout_constraintBottom_toTopOf="@+id/banner_container"
         app:layout_constraintEnd_toEndOf="@+id/edittext"
         app:layout_constraintHorizontal_bias="0.497"
@@ -144,14 +143,13 @@
         android:layout_height="70dp"
         android:layout_margin="20dp"
         android:layout_marginBottom="80dp"
-        android:scaleType="centerCrop"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/banner_container"
         app:layout_constraintEnd_toEndOf="@+id/edittext"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/edittext"
         app:layout_constraintTop_toBottomOf="@+id/edittext"
-        app:layout_constraintVertical_bias="0.32999998"
+        app:layout_constraintVertical_bias="0.18"
         app:lottie_rawRes="@raw/loading" />
 
     <LinearLayout

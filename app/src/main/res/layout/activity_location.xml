@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_of_all_screen"
-    tools:context="com.lovechat.lightgreen.white.meet.live.chat.activitys.LocationActivity">
+    android:background="@drawable/background_start_screen"
+    tools:context="com.footballchat.orangewhite.videochat.call.activitys.LocationActivity">
 
     <ImageView
         android:id="@+id/backbtn"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select from region"
-        android:textColor="@color/teal_200"
+        android:textColor="@color/black"
         android:visibility="invisible"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"

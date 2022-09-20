@@ -3,8 +3,8 @@
 
     <string name="age_hading1">Are you above 18 ?</string>
     <string name="name">Enter your name</string>
-    <string name="privacy_url">https://lovechatapps.github.io/privacy-policy.html</string>
-    <string name="tearms_use">https://lovechatapps.github.io/terms-of-use.html</string>
+    <string name="privacy_url">https://footballchatapps.github.io/privacy-policy.html</string>
+    <string name="tearms_use">https://footballchatapps.github.io/terms-of-use.html</string>
     <string name="live_video_call">Video call</string>
 
     <string name="capture_format_change_text">Slide to change capture format</string>
