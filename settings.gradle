@@ -20,6 +20,6 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name ="Baate Football Chat Orange White"
+rootProject.name ="Baate Toop Chart Red Pink"
 include ':app'
 include ':ads'

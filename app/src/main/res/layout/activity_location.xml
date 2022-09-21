@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_start_screen"
-    tools:context="com.footballchat.orangewhite.videochat.call.activitys.LocationActivity">
+    android:background="@drawable/background_category"
+    tools:context="com.toopchart.redpink.video.chat.call.activitys.LocationActivity">
 
     <ImageView
         android:id="@+id/backbtn"

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgreound_girl_list_screen"
-    tools:context="com.footballchat.orangewhite.videochat.call.activitys.ChatRoomActivity">
+    android:background="@drawable/background_girl_list"
+    tools:context="com.toopchart.redpink.video.chat.call.activitys.ChatRoomActivity">
 
     <ImageView
         android:id="@+id/backbtn"
@@ -40,16 +40,16 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="Flage Name"
-        android:textColor="@color/teal_200"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backbtn" />
 
 
-    <androidx.recyclerview.widget.RecyclerView
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/videolistRecyclerview"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         app:layout_constraintBottom_toTopOf="@+id/banner_container"
         app:layout_constraintEnd_toEndOf="parent"

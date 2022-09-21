@@ -8,7 +8,7 @@
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_age_selection_screen"
+        android:background="@drawable/background_start_screen"
         tools:context="com.photography.stylishfonts.com.photography.hindishayari.activitys.AgeActivity">
 
 
@@ -74,7 +74,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
-            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -85,7 +84,7 @@
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="300dp"
-                android:layout_height="200dp"
+                android:layout_height="300dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/age_screen_img" />
 
@@ -113,7 +112,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgcontainer"
+           app:layout_constraintTop_toBottomOf="@+id/imgcontainer"
             app:layout_constraintVertical_bias="0.26">
 
             <TextView
@@ -124,7 +123,7 @@
                 android:textAlignment="center"
                 android:layout_marginBottom="20dp"
                 android:text="@string/age_hading1"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
 
             <TextView
@@ -135,7 +134,7 @@
                 android:layout_marginEnd="10dp"
                 android:text="This app requires you to be 18 years or older to continue"
                 android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
 
@@ -144,13 +143,15 @@
             android:layout_width="150dp"
             android:layout_height="70dp"
             android:layout_margin="25dp"
+            android:backgroundTint="@color/black"
             android:text="start"
             android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            app:layout_constraintBottom_toTopOf="@+id/banner_container"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/container" />
-
+            app:layout_constraintTop_toBottomOf="@+id/container"
+            app:layout_constraintVertical_bias="0.43" />
 
 
         <com.airbnb.lottie.LottieAnimationView
@@ -159,11 +160,13 @@
             android:layout_height="80dp"
             android:layout_margin="20dp"
             android:visibility="gone"
-            app:lottie_rawRes="@raw/loading"
+            app:layout_constraintBottom_toTopOf="@+id/banner_container"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/container" />
+            app:layout_constraintTop_toBottomOf="@+id/container"
+            app:layout_constraintVertical_bias="0.43"
+            app:lottie_rawRes="@raw/next_animation" />
 
         <TextView
             android:id="@+id/tvDescription"

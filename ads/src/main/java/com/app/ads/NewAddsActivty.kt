@@ -669,7 +669,7 @@ abstract class NewAddsActivty:AppCompatActivity() {
 
     private fun initUnityintestitalAds(){
         unityAds?.let {unityads ->
-            UnityAds.initialize(this,unityads.adAppKey,true,object :IUnityAdsInitializationListener{
+            UnityAds.initialize(this,unityads.adAppKey,false,object :IUnityAdsInitializationListener{
                 override fun onInitializationComplete() {
                     loadUnityinterstialAds()
                 }
