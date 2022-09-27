@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_category"
-    tools:context="com.toopchart.redpink.video.chat.call.activitys.LocationActivity">
+    android:background="@drawable/background_category_screen"
+    tools:context="com.toopchart.maroon.blue.love.video.call.activitys.LocationActivity">
 
     <ImageView
         android:id="@+id/backbtn"
@@ -39,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:paddingStart="80dp"
+        android:orientation="vertical"
         android:paddingEnd="80dp"
         android:layoutAnimation="@anim/layoutanimation"
         app:layout_constraintBottom_toBottomOf="parent"

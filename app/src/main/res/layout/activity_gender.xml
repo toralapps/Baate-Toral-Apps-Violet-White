@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_start_screen"
-    tools:context="com.toopchart.redpink.video.chat.call.activitys.GenderActivity">
+    tools:context="com.toopchart.maroon.blue.love.video.call.activitys.GenderActivity">
 
 
     <ImageView
@@ -38,6 +38,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:text="Male"
+        android:visibility="invisible"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/malecard"
@@ -63,6 +64,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:text="Female"
+        android:visibility="invisible"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/femalecard"

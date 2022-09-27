@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_connecting"
-    tools:context="com.toopchart.redpink.video.chat.call.activitys.LoadingScreen">
+    android:background="@drawable/background_splash_srceen"
+    tools:context="com.toopchart.maroon.blue.love.video.call.activitys.LoadingScreen">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView"

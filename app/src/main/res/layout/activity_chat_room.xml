@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_girl_list"
-    tools:context="com.toopchart.redpink.video.chat.call.activitys.ChatRoomActivity">
+    tools:context="com.toopchart.maroon.blue.love.video.call.activitys.ChatRoomActivity">
 
     <ImageView
         android:id="@+id/backbtn"
@@ -46,10 +46,10 @@
         app:layout_constraintTop_toBottomOf="@+id/backbtn" />
 
 
-    <androidx.viewpager2.widget.ViewPager2
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/videolistRecyclerview"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="12dp"
         app:layout_constraintBottom_toTopOf="@+id/banner_container"
         app:layout_constraintEnd_toEndOf="parent"

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_call_now_screen"
-    tools:context="com.toopchart.redpink.video.chat.call.activitys.CallNowActivity">
+    android:background="@drawable/background_category_screen"
+    tools:context="com.toopchart.maroon.blue.love.video.call.activitys.CallNowActivity">
 
 
   <ImageView

@@ -20,6 +20,6 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name ="Baate Toop Chart Red Pink"
+rootProject.name ="Baate Toop Chart Maroon Blue"
 include ':app'
 include ':ads'

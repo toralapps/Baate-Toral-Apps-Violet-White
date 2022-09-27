@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.toopchart.redpink.video.chat.call">
+    package="com.toopchart.maroon.blue.love.video.call">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
     <application
-        android:name="com.toopchart.redpink.video.chat.call.MyApplication"
+        android:name="com.toopchart.maroon.blue.love.video.call.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,39 +23,39 @@
         android:theme="@style/Theme.VideoChat"
         tools:targetApi="n">
         <activity
-            android:name="com.toopchart.redpink.video.chat.call.activitys.LoadingScreen"
+            android:name="com.toopchart.maroon.blue.love.video.call.activitys.LoadingScreen"
             android:exported="false" />
         <activity
-            android:name="com.toopchart.redpink.video.chat.call.activitys.LocationActivity"
+            android:name="com.toopchart.maroon.blue.love.video.call.activitys.LocationActivity"
             android:exported="false" />
         <activity
-            android:name="com.toopchart.redpink.video.chat.call.activitys.CallNowActivity"
-            android:exported="false" />
-
-        <activity
-            android:name="com.toopchart.redpink.video.chat.call.livevideocall.activity.CallLiveActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.toopchart.redpink.video.chat.call.livevideocall.activity.ConnectLiveActivity"
+            android:name="com.toopchart.maroon.blue.love.video.call.activitys.CallNowActivity"
             android:exported="false" />
 
         <activity
-            android:name="com.toopchart.redpink.video.chat.call.activitys.ChatRoomActivity"
+            android:name="com.toopchart.maroon.blue.love.video.call.livevideocall.activity.CallLiveActivity"
             android:exported="false" />
         <activity
-            android:name="com.toopchart.redpink.video.chat.call.activitys.TermUseActivity"
+            android:name="com.toopchart.maroon.blue.love.video.call.livevideocall.activity.ConnectLiveActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.toopchart.maroon.blue.love.video.call.activitys.ChatRoomActivity"
             android:exported="false" />
         <activity
-            android:name="com.toopchart.redpink.video.chat.call.activitys.GenderActivity"
+            android:name="com.toopchart.maroon.blue.love.video.call.activitys.TermUseActivity"
             android:exported="false" />
         <activity
-            android:name="com.toopchart.redpink.video.chat.call.activitys.AgeActivity"
+            android:name="com.toopchart.maroon.blue.love.video.call.activitys.GenderActivity"
             android:exported="false" />
         <activity
-            android:name="com.toopchart.redpink.video.chat.call.activitys.StartActivity"
+            android:name="com.toopchart.maroon.blue.love.video.call.activitys.AgeActivity"
             android:exported="false" />
         <activity
-            android:name="com.toopchart.redpink.video.chat.call.activitys.SplashScreenActivity"
+            android:name="com.toopchart.maroon.blue.love.video.call.activitys.StartActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.toopchart.maroon.blue.love.video.call.activitys.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,10 +64,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.toopchart.redpink.video.chat.call.MainActivity"
+            android:name="com.toopchart.maroon.blue.love.video.call.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.toopchart.redpink.video.chat.call.blockuser.BlockListActivity"
+            android:name="com.toopchart.maroon.blue.love.video.call.blockuser.BlockListActivity"
             android:exported="true" />
 
 
