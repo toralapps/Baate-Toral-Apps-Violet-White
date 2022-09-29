@@ -154,3 +154,9 @@
 -keep class com.panchanitech.giirlvideo.MainActivity.** { *; }
 -keepclassmembers class * extends androidx.lifecycle.EmptyActivityLifecycleCallbacks { *; }
 -keepclassmembers class androidx.lifecycle.ReportFragment$** { *; }
+
+
+-keep class de.tavendo.autobahn.**{*;}
+-keep class org.webrtc.**{* ;}
+-keep class libjingle_peerconnection_so.**{* ;}
+-keep class com.livecall.feature.livevideocall.activity.** { *; }
