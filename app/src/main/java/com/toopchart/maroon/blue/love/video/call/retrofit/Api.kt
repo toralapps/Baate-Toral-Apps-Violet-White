@@ -8,6 +8,7 @@ import retrofit2.http.GET
 
 interface Api {
     @GET("getimageslist.json")
+//    @GET("getimageslist-live.json")
     suspend fun getVideo():Response<VideoList>
 
     @GET("save.json")
