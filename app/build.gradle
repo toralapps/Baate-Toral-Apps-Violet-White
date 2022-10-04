@@ -11,7 +11,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.toopchart.maroon.blue.love.video.call"
+        applicationId "com.appsplayerstudio.workoutmanager"
         minSdk 21
         targetSdk 33
         versionCode 1

@@ -20,6 +20,6 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name ="Baate Toop Chart Maroon Blue"
+rootProject.name ="Baate Player Studio Workout Chat"
 include ':app'
 include ':ads'

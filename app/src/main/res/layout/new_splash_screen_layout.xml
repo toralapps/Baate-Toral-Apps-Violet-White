@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_splash_srceen">
+    android:background="@drawable/background_splash_screen">
 
 
     <ImageView
@@ -17,7 +17,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24000001" />
+        app:layout_constraintVertical_bias="0.35000002" />
 
 
     <TextView
@@ -26,14 +26,14 @@
         android:layout_height="wrap_content"
         android:text="@string/live_video_call"
         android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45999998" />
+        app:layout_constraintVertical_bias="0.53" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="wrap_content"

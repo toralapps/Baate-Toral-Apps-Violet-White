@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_category_screen"
-    tools:context="com.toopchart.maroon.blue.love.video.call.activitys.LocationActivity">
+    android:background="@drawable/background_for_other_screens"
+    tools:context="com.appsplayerstudio.workoutmanager.activitys.LocationActivity">
 
     <ImageView
         android:id="@+id/backbtn"

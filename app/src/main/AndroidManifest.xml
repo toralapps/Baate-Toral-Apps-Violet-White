@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.toopchart.maroon.blue.love.video.call">
+    package="com.appsplayerstudio.workoutmanager">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
     <application
-        android:name="com.toopchart.maroon.blue.love.video.call.MyApplication"
+        android:name="com.appsplayerstudio.workoutmanager.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,39 +23,39 @@
         android:theme="@style/Theme.VideoChat"
         tools:targetApi="n">
         <activity
-            android:name="com.toopchart.maroon.blue.love.video.call.activitys.LoadingScreen"
+            android:name="com.appsplayerstudio.workoutmanager.activitys.LoadingScreen"
             android:exported="false" />
         <activity
-            android:name="com.toopchart.maroon.blue.love.video.call.activitys.LocationActivity"
+            android:name="com.appsplayerstudio.workoutmanager.activitys.LocationActivity"
             android:exported="false" />
         <activity
-            android:name="com.toopchart.maroon.blue.love.video.call.activitys.CallNowActivity"
-            android:exported="false" />
-
-        <activity
-            android:name="com.toopchart.maroon.blue.love.video.call.livevideocall.activity.CallLiveActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.toopchart.maroon.blue.love.video.call.livevideocall.activity.ConnectLiveActivity"
+            android:name="com.appsplayerstudio.workoutmanager.activitys.CallNowActivity"
             android:exported="false" />
 
         <activity
-            android:name="com.toopchart.maroon.blue.love.video.call.activitys.ChatRoomActivity"
+            android:name="com.appsplayerstudio.workoutmanager.livevideocall.activity.CallLiveActivity"
             android:exported="false" />
         <activity
-            android:name="com.toopchart.maroon.blue.love.video.call.activitys.TermUseActivity"
+            android:name="com.appsplayerstudio.workoutmanager.livevideocall.activity.ConnectLiveActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.appsplayerstudio.workoutmanager.activitys.ChatRoomActivity"
             android:exported="false" />
         <activity
-            android:name="com.toopchart.maroon.blue.love.video.call.activitys.GenderActivity"
+            android:name="com.appsplayerstudio.workoutmanager.activitys.TermUseActivity"
             android:exported="false" />
         <activity
-            android:name="com.toopchart.maroon.blue.love.video.call.activitys.AgeActivity"
+            android:name="com.appsplayerstudio.workoutmanager.activitys.GenderActivity"
             android:exported="false" />
         <activity
-            android:name="com.toopchart.maroon.blue.love.video.call.activitys.StartActivity"
+            android:name="com.appsplayerstudio.workoutmanager.activitys.AgeActivity"
             android:exported="false" />
         <activity
-            android:name="com.toopchart.maroon.blue.love.video.call.activitys.SplashScreenActivity"
+            android:name="com.appsplayerstudio.workoutmanager.activitys.StartActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.appsplayerstudio.workoutmanager.activitys.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,10 +64,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.toopchart.maroon.blue.love.video.call.MainActivity"
+            android:name="com.appsplayerstudio.workoutmanager.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.toopchart.maroon.blue.love.video.call.blockuser.BlockListActivity"
+            android:name="com.appsplayerstudio.workoutmanager.blockuser.BlockListActivity"
             android:exported="true" />
 
 
