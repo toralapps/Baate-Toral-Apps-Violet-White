@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_for_other_screens"
-    tools:context="com.appsplayerstudio.workoutmanager.activitys.GenderActivity">
+    android:background="@drawable/background_start_screen"
+    tools:context="com.playerstudio.redpink.videocall.chat.activitys.GenderActivity">
 
 
     <ImageView
@@ -38,6 +38,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:text="Male"
+        android:visibility="invisible"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/malecard"
@@ -63,6 +64,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:text="Female"
+        android:visibility="invisible"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/femalecard"

@@ -20,6 +20,6 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name ="Baate Player Studio Workout Chat"
+rootProject.name ="Baate Player Studio Red Pink Chat"
 include ':app'
 include ':ads'

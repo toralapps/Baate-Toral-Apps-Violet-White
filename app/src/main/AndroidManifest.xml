@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.appsplayerstudio.workoutmanager">
+    package="com.playerstudio.redpink.videocall.chat">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
     <application
-        android:name="com.appsplayerstudio.workoutmanager.MyApplication"
+        android:name="com.playerstudio.redpink.videocall.chat.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,39 +23,39 @@
         android:theme="@style/Theme.VideoChat"
         tools:targetApi="n">
         <activity
-            android:name="com.appsplayerstudio.workoutmanager.activitys.LoadingScreen"
+            android:name="com.playerstudio.redpink.videocall.chat.activitys.LoadingScreen"
             android:exported="false" />
         <activity
-            android:name="com.appsplayerstudio.workoutmanager.activitys.LocationActivity"
+            android:name="com.playerstudio.redpink.videocall.chat.activitys.LocationActivity"
             android:exported="false" />
         <activity
-            android:name="com.appsplayerstudio.workoutmanager.activitys.CallNowActivity"
-            android:exported="false" />
-
-        <activity
-            android:name="com.appsplayerstudio.workoutmanager.livevideocall.activity.CallLiveActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.appsplayerstudio.workoutmanager.livevideocall.activity.ConnectLiveActivity"
+            android:name="com.playerstudio.redpink.videocall.chat.activitys.CallNowActivity"
             android:exported="false" />
 
         <activity
-            android:name="com.appsplayerstudio.workoutmanager.activitys.ChatRoomActivity"
+            android:name="com.playerstudio.redpink.videocall.chat.livevideocall.activity.CallLiveActivity"
             android:exported="false" />
         <activity
-            android:name="com.appsplayerstudio.workoutmanager.activitys.TermUseActivity"
+            android:name="com.playerstudio.redpink.videocall.chat.livevideocall.activity.ConnectLiveActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.playerstudio.redpink.videocall.chat.activitys.ChatRoomActivity"
             android:exported="false" />
         <activity
-            android:name="com.appsplayerstudio.workoutmanager.activitys.GenderActivity"
+            android:name="com.playerstudio.redpink.videocall.chat.activitys.TermUseActivity"
             android:exported="false" />
         <activity
-            android:name="com.appsplayerstudio.workoutmanager.activitys.AgeActivity"
+            android:name="com.playerstudio.redpink.videocall.chat.activitys.GenderActivity"
             android:exported="false" />
         <activity
-            android:name="com.appsplayerstudio.workoutmanager.activitys.StartActivity"
+            android:name="com.playerstudio.redpink.videocall.chat.activitys.AgeActivity"
             android:exported="false" />
         <activity
-            android:name="com.appsplayerstudio.workoutmanager.activitys.SplashScreenActivity"
+            android:name="com.playerstudio.redpink.videocall.chat.activitys.StartActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.playerstudio.redpink.videocall.chat.activitys.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,10 +64,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.appsplayerstudio.workoutmanager.MainActivity"
+            android:name="com.playerstudio.redpink.videocall.chat.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.appsplayerstudio.workoutmanager.blockuser.BlockListActivity"
+            android:name="com.playerstudio.redpink.videocall.chat.blockuser.BlockListActivity"
             android:exported="true" />
 
 

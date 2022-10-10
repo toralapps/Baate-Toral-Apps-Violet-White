@@ -123,5 +123,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"/>
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

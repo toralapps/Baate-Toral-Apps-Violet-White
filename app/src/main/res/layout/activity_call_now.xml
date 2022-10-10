@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_for_other_screens"
-    tools:context="com.appsplayerstudio.workoutmanager.activitys.CallNowActivity">
+    android:background="@drawable/background_call_now_screen"
+    tools:context="com.playerstudio.redpink.videocall.chat.activitys.CallNowActivity">
 
 
   <ImageView

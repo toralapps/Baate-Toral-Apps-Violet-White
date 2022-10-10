@@ -12,37 +12,55 @@
         android:layout_height="match_parent"
         android:background="@drawable/background_start_screen">
 
-        <ImageView
-            android:id="@+id/startbtn"
-            android:layout_width="150dp"
-            android:layout_height="200dp"
-            android:src="@drawable/start_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.32999998" />
-
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lotianimation"
-            android:layout_width="150dp"
-            android:layout_height="200dp"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            android:visibility="invisible"
-            app:lottie_rawRes="@raw/next_animation"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.32999998" />
+            android:fillViewport="true"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/sharebtn">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/startbtn"
+                    android:layout_width="150dp"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/start_button"
+                    app:layout_constraintBottom_toTopOf="@+id/banner_container"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/banner_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="bottom|center"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.6">
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
 
         <ImageView
-            android:id="@+id/privecypolicbtn"
+            android:id="@+id/privecybtn"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_margin="5dp"
@@ -51,8 +69,7 @@
             app:layout_constraintEnd_toStartOf="@+id/sharebtn"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/startbtn"
-            app:layout_constraintVertical_bias="0.42000002" />
+            app:layout_constraintVertical_bias="0.22000003" />
 
 
         <ImageView
@@ -64,9 +81,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/rateappbtn"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/privecypolicbtn"
-            app:layout_constraintTop_toBottomOf="@+id/startbtn"
-            app:layout_constraintVertical_bias="0.26999998" />
+            app:layout_constraintStart_toEndOf="@+id/privecybtn"
+            app:layout_constraintVertical_bias="0.0" />
 
 
         <ImageView
@@ -79,22 +95,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/sharebtn"
-            app:layout_constraintTop_toBottomOf="@+id/startbtn"
-            app:layout_constraintVertical_bias="0.42000002" />
+            app:layout_constraintVertical_bias="0.22000003" />
 
-        <LinearLayout
-            android:id="@+id/banner_container"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="bottom|center"
-            android:layout_margin="5dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

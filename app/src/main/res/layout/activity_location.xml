@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_for_other_screens"
-    tools:context="com.appsplayerstudio.workoutmanager.activitys.LocationActivity">
+    android:background="@drawable/background_category_screen"
+    tools:context="com.playerstudio.redpink.videocall.chat.activitys.LocationActivity">
 
     <ImageView
         android:id="@+id/backbtn"
@@ -38,9 +38,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:paddingStart="80dp"
+        android:paddingStart="50dp"
         android:orientation="vertical"
-        android:paddingEnd="80dp"
+        android:paddingEnd="50dp"
         android:layoutAnimation="@anim/layoutanimation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
