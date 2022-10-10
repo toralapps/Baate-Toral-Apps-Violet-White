@@ -8,7 +8,7 @@ interface AdsApiCall {
 
 
 //    @GET("test-ads-true.json")
-    @GET("baate-maroon-blue-chat.json")
+    @GET("baate-red-pink-chat.json")
     suspend fun getAds():Response<AdsRoot>
 
 }

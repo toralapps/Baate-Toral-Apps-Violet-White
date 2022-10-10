@@ -20,7 +20,7 @@ object AppModule {
     @Singleton
     fun getAdsApi():AdsApiCall{
         return Retrofit.Builder()
-            .baseUrl("https://raw.githubusercontent.com/toopchartchat/toopchartchat.github.io/main/Ads/")
+            .baseUrl("https://raw.githubusercontent.com/appsplayerstudio/appsplayerstudio.github.io/main/Ads/")
 //           .baseUrl("https://raw.githubusercontent.com/printf-app-data/printf-app-data.github.io/main/Ad-Test-API/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
