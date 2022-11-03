@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.playerstudio.redpink.videocall.chat">
+    package="com.rugbychat.redpink.video.call">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
     <application
-        android:name="com.playerstudio.redpink.videocall.chat.MyApplication"
+        android:name="com.rugbychat.redpink.video.call.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,39 +23,39 @@
         android:theme="@style/Theme.VideoChat"
         tools:targetApi="n">
         <activity
-            android:name="com.playerstudio.redpink.videocall.chat.activitys.LoadingScreen"
+            android:name="com.rugbychat.redpink.video.call.activitys.LoadingScreen"
             android:exported="false" />
         <activity
-            android:name="com.playerstudio.redpink.videocall.chat.activitys.LocationActivity"
+            android:name="com.rugbychat.redpink.video.call.activitys.LocationActivity"
             android:exported="false" />
         <activity
-            android:name="com.playerstudio.redpink.videocall.chat.activitys.CallNowActivity"
-            android:exported="false" />
-
-        <activity
-            android:name="com.playerstudio.redpink.videocall.chat.livevideocall.activity.CallLiveActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.playerstudio.redpink.videocall.chat.livevideocall.activity.ConnectLiveActivity"
+            android:name="com.rugbychat.redpink.video.call.activitys.CallNowActivity"
             android:exported="false" />
 
         <activity
-            android:name="com.playerstudio.redpink.videocall.chat.activitys.ChatRoomActivity"
+            android:name="com.rugbychat.redpink.video.call.livevideocall.activity.CallLiveActivity"
             android:exported="false" />
         <activity
-            android:name="com.playerstudio.redpink.videocall.chat.activitys.TermUseActivity"
+            android:name="com.rugbychat.redpink.video.call.livevideocall.activity.ConnectLiveActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.rugbychat.redpink.video.call.activitys.ChatRoomActivity"
             android:exported="false" />
         <activity
-            android:name="com.playerstudio.redpink.videocall.chat.activitys.GenderActivity"
+            android:name="com.rugbychat.redpink.video.call.activitys.TermUseActivity"
             android:exported="false" />
         <activity
-            android:name="com.playerstudio.redpink.videocall.chat.activitys.AgeActivity"
+            android:name="com.rugbychat.redpink.video.call.activitys.GenderActivity"
             android:exported="false" />
         <activity
-            android:name="com.playerstudio.redpink.videocall.chat.activitys.StartActivity"
+            android:name="com.rugbychat.redpink.video.call.activitys.AgeActivity"
             android:exported="false" />
         <activity
-            android:name="com.playerstudio.redpink.videocall.chat.activitys.SplashScreenActivity"
+            android:name="com.rugbychat.redpink.video.call.activitys.StartActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.rugbychat.redpink.video.call.activitys.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,10 +64,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.playerstudio.redpink.videocall.chat.MainActivity"
+            android:name="com.rugbychat.redpink.video.call.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.playerstudio.redpink.videocall.chat.blockuser.BlockListActivity"
+            android:name="com.rugbychat.redpink.video.call.blockuser.BlockListActivity"
             android:exported="true" />
 
 

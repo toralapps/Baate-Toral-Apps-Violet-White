@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_start_screen">
+        android:background="@drawable/background_for_splash_start_screen">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="0dp"

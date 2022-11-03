@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.lovechat.red.pink.girl.dating.call",
+  "applicationId": "com.rugbychat.redpink.video.call",
   "variantName": "release",
   "elements": [
     {
@@ -13,7 +13,7 @@
       "attributes": [],
       "versionCode": 1,
       "versionName": "1.0",
-      "outputFile": "com.lovechat.red.pink.girl.dating.call-v1(1.0)-release.apk"
+      "outputFile": "com.rugbychat.redpink.video.call-v1(1.0)-release.apk"
     }
   ],
   "elementType": "File"

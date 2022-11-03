@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_start_screen"
-    tools:context="com.playerstudio.redpink.videocall.chat.activitys.GenderActivity">
+    android:background="@drawable/background_for_all_screens"
+    tools:context="com.rugbychat.redpink.video.call.activitys.GenderActivity">
 
 
     <ImageView
