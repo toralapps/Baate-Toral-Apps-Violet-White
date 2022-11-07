@@ -27,12 +27,14 @@
                 android:layout_height="match_parent">
 
 
-                <ImageView
+                <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/startbtn"
                     android:layout_width="150dp"
                     android:layout_height="200dp"
                     android:layout_marginBottom="10dp"
-                    android:src="@drawable/start_button"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/start"
                     app:layout_constraintBottom_toTopOf="@+id/banner_container"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"

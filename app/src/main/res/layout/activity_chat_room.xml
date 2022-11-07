@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_for_all_screens"
-    tools:context="com.rugbychat.redpink.video.call.activitys.ChatRoomActivity">
+    tools:context="com.rummychat.lightgreen.livecall.chat.activitys.ChatRoomActivity">
 
     <ImageView
         android:id="@+id/backbtn"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="Flage Name"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backbtn" />

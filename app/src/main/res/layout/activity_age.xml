@@ -62,16 +62,17 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/imgcontainer"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:layout_margin="5dp"
             app:cardCornerRadius="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/container"
+            app:layout_constraintBottom_toTopOf="@+id/filledButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.110000014">
+            app:layout_constraintTop_toBottomOf="@+id/container"
+            app:layout_constraintVertical_bias="0.110000014"
+            app:layout_constraintVertical_chainStyle="spread">
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -110,7 +111,6 @@
             android:layout_marginTop="25dp"
             android:orientation="vertical"
             android:padding="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/banner_container"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -139,18 +139,18 @@
         </LinearLayout>
 
 
-
         <ImageView
             android:id="@+id/filledButton"
             android:layout_width="150dp"
             android:layout_height="70dp"
             android:layout_marginHorizontal="25dp"
             android:layout_marginTop="35dp"
-            android:src="@drawable/yed_button"
+            android:src="@drawable/next_btn"
+            app:layout_constraintBottom_toTopOf="@+id/tvDescription"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/container"
+            app:layout_constraintTop_toBottomOf="@+id/imgcontainer"
             app:layout_constraintVertical_bias="0.18" />
 
 
