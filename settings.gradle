@@ -20,6 +20,6 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name ="Baate Rugby Chat Red Pink"
+rootProject.name ="Baate Nimy Chat Bottle White"
 include ':app'
 include ':ads'

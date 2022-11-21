@@ -11,7 +11,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.rummychat.lightgreen.livecall.chat"
+        applicationId "com.nimychat.bottlewhite.videocall"
         minSdk 21
         targetSdk 33
         versionCode 1

@@ -1,0 +1,10 @@
+name: Sign apk using reusable workflows
+
+on : workflow_dispatch
+
+jobs:
+  call-workflow-passing-data:
+    uses: nimychatapps/nimychatapps.github.io/.github/workflows/create_release.yml@main
+    secrets: inherit
+
+

@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.rummychat.lightgreen.livecall.chat",
+  "applicationId": "com.nimychat.bottlewhite.videocall",
   "variantName": "release",
   "elements": [
     {
@@ -13,7 +13,7 @@
       "attributes": [],
       "versionCode": 1,
       "versionName": "1.0",
-      "outputFile": "com.rummychat.lightgreen.livecall.chat-v1(1.0)-release.apk"
+      "outputFile": "com.nimychat.bottlewhite.videocall-v1(1.0)-release.apk"
     }
   ],
   "elementType": "File"

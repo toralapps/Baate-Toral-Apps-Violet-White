@@ -34,7 +34,7 @@
                     android:layout_marginBottom="10dp"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/start"
+                    app:lottie_rawRes="@raw/start_button"
                     app:layout_constraintBottom_toTopOf="@+id/banner_container"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
