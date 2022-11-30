@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.nimychat.bottlewhite.videocall">
+    package="com.nimychat.skybluewhite.videocall.chat">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
     <application
-        android:name="com.nimychat.bottlewhite.videocall.MyApplication"
+        android:name="com.nimychat.skybluewhite.videocall.chat.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,39 +23,39 @@
         android:theme="@style/Theme.VideoChat"
         tools:targetApi="n">
         <activity
-            android:name="com.nimychat.bottlewhite.videocall.activitys.LoadingScreen"
+            android:name="com.nimychat.skybluewhite.videocall.chat.activitys.LoadingScreen"
             android:exported="false" />
         <activity
-            android:name="com.nimychat.bottlewhite.videocall.activitys.LocationActivity"
+            android:name="com.nimychat.skybluewhite.videocall.chat.activitys.LocationActivity"
             android:exported="false" />
         <activity
-            android:name="com.nimychat.bottlewhite.videocall.activitys.CallNowActivity"
-            android:exported="false" />
-
-        <activity
-            android:name="com.nimychat.bottlewhite.videocall.livevideocall.activity.CallLiveActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.nimychat.bottlewhite.videocall.livevideocall.activity.ConnectLiveActivity"
+            android:name="com.nimychat.skybluewhite.videocall.chat.activitys.CallNowActivity"
             android:exported="false" />
 
         <activity
-            android:name="com.nimychat.bottlewhite.videocall.activitys.ChatRoomActivity"
+            android:name="com.nimychat.skybluewhite.videocall.chat.livevideocall.activity.CallLiveActivity"
             android:exported="false" />
         <activity
-            android:name="com.nimychat.bottlewhite.videocall.activitys.TermUseActivity"
+            android:name="com.nimychat.skybluewhite.videocall.chat.livevideocall.activity.ConnectLiveActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.nimychat.skybluewhite.videocall.chat.activitys.ChatRoomActivity"
             android:exported="false" />
         <activity
-            android:name="com.nimychat.bottlewhite.videocall.activitys.GenderActivity"
+            android:name="com.nimychat.skybluewhite.videocall.chat.activitys.TermUseActivity"
             android:exported="false" />
         <activity
-            android:name="com.nimychat.bottlewhite.videocall.activitys.AgeActivity"
+            android:name="com.nimychat.skybluewhite.videocall.chat.activitys.GenderActivity"
             android:exported="false" />
         <activity
-            android:name="com.nimychat.bottlewhite.videocall.activitys.StartActivity"
+            android:name="com.nimychat.skybluewhite.videocall.chat.activitys.AgeActivity"
             android:exported="false" />
         <activity
-            android:name="com.nimychat.bottlewhite.videocall.activitys.SplashScreenActivity"
+            android:name="com.nimychat.skybluewhite.videocall.chat.activitys.StartActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.nimychat.skybluewhite.videocall.chat.activitys.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,10 +64,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.nimychat.bottlewhite.videocall.MainActivity"
+            android:name="com.nimychat.skybluewhite.videocall.chat.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.nimychat.bottlewhite.videocall.blockuser.BlockListActivity"
+            android:name="com.nimychat.skybluewhite.videocall.chat.blockuser.BlockListActivity"
             android:exported="true" />
 
 

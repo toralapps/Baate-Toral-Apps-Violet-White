@@ -101,11 +101,11 @@
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/call_now"
         android:layout_width="130dp"
-        android:layout_height="100dp"
+        android:layout_height="200dp"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         android:scaleType="centerCrop"
-        app:lottie_rawRes="@raw/call_aniamtion"
+        app:lottie_rawRes="@raw/call_animation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

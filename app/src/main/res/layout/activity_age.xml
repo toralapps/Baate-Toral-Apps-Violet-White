@@ -142,7 +142,7 @@
         <ImageView
             android:id="@+id/filledButton"
             android:layout_width="150dp"
-            android:layout_height="70dp"
+            android:layout_height="80dp"
             android:layout_marginHorizontal="25dp"
             android:layout_marginTop="35dp"
             android:src="@drawable/right_arrow"

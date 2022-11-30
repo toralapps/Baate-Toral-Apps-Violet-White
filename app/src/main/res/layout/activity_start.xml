@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_for_splash_start_screen">
+        android:background="@drawable/background_for_all_screens">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="0dp"
@@ -27,14 +27,12 @@
                 android:layout_height="match_parent">
 
 
-                <com.airbnb.lottie.LottieAnimationView
+                <ImageView
                     android:id="@+id/startbtn"
                     android:layout_width="150dp"
                     android:layout_height="200dp"
                     android:layout_marginBottom="10dp"
-                    app:lottie_autoPlay="true"
-                    app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/start_button"
+                    android:src="@drawable/start_button"
                     app:layout_constraintBottom_toTopOf="@+id/banner_container"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"

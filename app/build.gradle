@@ -11,7 +11,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.nimychat.bottlewhite.videocall"
+        applicationId "com.nimychat.skybluewhite.videocall.chat"
         minSdk 21
         targetSdk 33
         versionCode 1
