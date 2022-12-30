@@ -4,7 +4,7 @@ on : workflow_dispatch
 
 jobs:
   call-workflow-passing-data:
-    uses: nimychatapps/nimychatapps.github.io/.github/workflows/create_release.yml@main
+    uses: wisechatapps/wisechatapps.github.io/.github/workflows/create_release.yml@main
     secrets: inherit
 
 

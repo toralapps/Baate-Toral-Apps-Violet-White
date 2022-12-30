@@ -20,6 +20,6 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name ="Baate Nimy Chat Skyblue White"
+rootProject.name ="Baate Wise Chat Violet White"
 include ':app'
 include ':ads'
