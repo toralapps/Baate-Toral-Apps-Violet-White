@@ -1,23 +1,28 @@
 package com.wisechat.violetwhite.video.call.repository
 
 import android.util.Log
+import androidx.datastore.core.DataStore
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.wisechat.violetwhite.video.call.retrofit.Api
 import com.wisechat.violetwhite.video.call.singletons.ListOfVideos
 import com.wisechat.violetwhite.video.call.videolistmodel.ReportModel
 import com.wisechat.violetwhite.video.call.videolistmodel.VideoList
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Inject
 
-class RepositoryImp @Inject constructor(private val api: Api) {
+class RepositoryImp @Inject constructor(
+    private val api: Api,
+    private val cachVideoList: DataStore<VideoList>
+){
 
     val response=MutableLiveData<Response<VideoList>>()
     val liveDataVideo:LiveData<Response<VideoList>> get() = response
 
-    suspend fun getVideos() {
+    val cachVideoListStrem = cachVideoList.data
 
+
+
+    suspend fun getVideos() {
         response.value = Response.Loading()
 
         var result:retrofit2.Response<VideoList>? = null
@@ -31,16 +36,17 @@ class RepositoryImp @Inject constructor(private val api: Api) {
             }
 
        if(result!!.isSuccessful && result.body()!= null && result.body()!!.Data.isNotEmpty()){
-           response.value = Response.Success(result.body())
+           val respones = result.body() ?: VideoList()
+           response.value = Response.Success(respones)
+           updateCacheVideoList(respones)
 
        }else{
-           Log.d("RECALLING", "getVideos: ")
-               response.value = Response.error("Please try after sometimes")
+          errorInNetwrokCall()
        }
 
     }catch (e:Exception){
+            Log.d("ERROR in CALLING", e.printStackTrace().toString())
         response.value = Response.error("Please try after sometimes")
-
         }
     }
 
@@ -65,6 +71,34 @@ class RepositoryImp @Inject constructor(private val api: Api) {
           Log.d("DEEP",e.message.toString())
           Response.error("Please try after sometimes")
       }
+    }
+
+    private suspend fun updateCacheVideoList(respones: VideoList){
+        cachVideoList.updateData {
+            it.copy(
+                Data = respones.Data,
+                Settings = respones.Settings,
+                HttpStatus = respones.HttpStatus,
+                Message = respones.Message,
+                Status = respones.Status
+            )
+        }
+    }
+
+    private suspend fun errorInNetwrokCall(){
+        if (ListOfVideos.selectedIndex == ListOfVideos.ListOfApis.size){
+            cachVideoListStrem.collect{
+                if (it.Data.isEmpty()){
+                    response.value = Response.error("Please try after sometimes")
+                }else{
+                    response.value = Response.Success(it)
+                    Log.d("CACHESTREM", "getVideos: flow collected")
+                }
+            }
+        }else{
+            Log.d("RECALLING", "getVideos: ")
+            response.value = Response.error("Please try after sometimes")
+        }
     }
 //
 //     val api1 = Retrofit.Builder()

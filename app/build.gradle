@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-parcelize'
     id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.kotlin.plugin.serialization'
 }
 
 android {
@@ -71,8 +72,8 @@ dependencies {
 
 
     //dagger
-    api "com.google.dagger:hilt-android:2.43"
-    kapt "com.google.dagger:hilt-compiler:2.43"
+    api "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
 
     //viewPagger2
     implementation "androidx.viewpager2:viewpager2:1.0.0"
@@ -107,4 +108,9 @@ dependencies {
     implementation 'org.webrtc:google-webrtc:1.0.23995'
     implementation 'com.devbrackets.android:exomedia:4.1.0'
     implementation 'com.android.volley:volley:1.2.1'
+
+    //kotlin serialization
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4'
+
 }

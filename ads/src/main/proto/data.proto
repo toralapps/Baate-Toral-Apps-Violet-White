@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_package = "com.app.ads";
+option java_multiple_files = true;
+
+message CachData{
+  string Comments = 1;
+  string FirstName = 2;
+  string LastName = 3;
+  string Likes = 4;
+  string Location = 5;
+  string Loves = 6;
+  string Smiles = 7;
+  string SrNo = 8;
+  string ThumbnailUrl = 9;
+  int32 VideoId = 10;
+  string VideoName = 11;
+  string VideoUrl = 12;
+  string Views = 13;
+}
+
+message CachVideoCallType{
+  string VideoCall = 1;
+}
+
+message CachVideos{
+  repeated CachData Data = 1;
+  CachVideoCallType Settings = 2;
+  int32 HttpStatus = 3;
+  string Message = 4;
+  bool Status = 5;
+}

@@ -99,7 +99,6 @@ class LocationActivity : NewAddsActivty(), FlagsAdapter.Interaction {
                     Log.d("DEEP", "reposse is success ${it.videoList!!.Status}")
                     if (it.videoList!!.Data.isNotEmpty()) {
                        setUpVideoCallType(it.videoList.Settings.VideoCall,it.videoList)
-
                     }else{
                         snackBar(backbtn, "Please try later")
                     }
@@ -141,7 +140,6 @@ class LocationActivity : NewAddsActivty(), FlagsAdapter.Interaction {
                     Log.d("DEEP","shreddata is not null")
                      it.Settings.VideoCall
                 } ?: "Prank"
-
             }else{
                 SavedVideoList.saveVideos(this,videoList)
                 videoCallType = videoCall

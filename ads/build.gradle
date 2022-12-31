@@ -4,6 +4,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id "com.google.protobuf" version "0.8.17"
 
 }
 
@@ -44,8 +45,8 @@ dependencies {
 
 
     //dagger
-    api "com.google.dagger:hilt-android:2.43"
-     kapt "com.google.dagger:hilt-compiler:2.43"
+    api "com.google.dagger:hilt-android:2.44"
+     kapt "com.google.dagger:hilt-compiler:2.44"
 
     // Retrofit + GSON
     api "com.squareup.retrofit2:retrofit:2.9.0"
@@ -81,4 +82,27 @@ dependencies {
     //live data
     api "androidx.lifecycle:lifecycle-livedata-ktx:2.5.0"
 
+    //proto datastore
+    api "androidx.datastore:datastore:1.0.0"
+    api  "com.google.protobuf:protobuf-javalite:3.21.9"
+
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.21.9"
+    }
+
+    // Generates the java Protobuf-lite code for the Protobufs in this project. See
+    // https://github.com/google/protobuf-gradle-plugin#customizing-protobuf-compilation
+    // for more information.
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option 'lite'
+                }
+            }
+        }
+    }
 }
