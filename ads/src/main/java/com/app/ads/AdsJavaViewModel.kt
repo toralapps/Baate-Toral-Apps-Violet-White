@@ -1,5 +1,6 @@
 package com.app.ads
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
@@ -7,6 +8,7 @@ import com.app.ads.domain.models.AdsRoot
 import com.app.ads.domain.repository.AdsRepository
 import com.app.ads.utils.AdsEvent
 import com.app.ads.utils.AdsState
+import com.app.ads.utils.LocalAds
 import com.app.ads.utils.Response
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -42,7 +44,13 @@ class AdsJavaViewModel @Inject constructor(
                     }
 
                     is Response.error ->{
-                        _adsFlow.value = it
+                        if (LocalAds.selectedIndex != LocalAds.ListOfAdsApis.size){
+                            Log.d("RECALLINGAds", "onCreate: reCallingApi ${LocalAds.selectedIndex}")
+                            LocalAds.setNextApi()
+                            getAdsFromApi()
+                        }else{
+                            _adsFlow.value = it
+                        }
                     }
 
                     is Response.Loading ->{
