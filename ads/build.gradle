@@ -4,6 +4,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'org.jetbrains.kotlin.plugin.serialization'
     id "com.google.protobuf" version "0.8.17"
 
 }
@@ -85,6 +86,10 @@ dependencies {
     //proto datastore
     api "androidx.datastore:datastore:1.0.0"
     api  "com.google.protobuf:protobuf-javalite:3.21.9"
+
+    //kotlin serialization
+    api 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1'
+    api 'org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.4'
 
 }
 

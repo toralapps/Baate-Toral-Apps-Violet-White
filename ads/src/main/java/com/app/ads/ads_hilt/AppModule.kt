@@ -7,8 +7,9 @@ import androidx.datastore.dataStoreFile
 import com.app.ads.AdsJavaViewModel
 import com.app.ads.AdsViewModel
 import com.app.ads.CachVideos
+import com.app.ads.adsprotodatastore.AdsSerializer
 import com.app.ads.data.remote.AdsApiCall
-import com.app.ads.protoserializer.CachVideoSerializer
+import com.app.ads.domain.models.AdsRoot
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,18 +38,19 @@ object AppModule {
             .create()
     }
 
-//    @Provides
-//    @Singleton
-//    fun provideCachVideoes(
-//        @ApplicationContext context: Context,
-//        cachVideoSerializer: CachVideoSerializer
-//    ):DataStore<CachVideos> =
-//        DataStoreFactory.create(
-//            serializer = cachVideoSerializer,
-//            corruptionHandler = null,
-//            scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
-//        ){
-//            context.dataStoreFile("cache_videos.pb")
-//        }
+    @Provides
+    @Singleton
+    fun provideAdsSerializale(
+        @ApplicationContext context: Context,
+        adsSerializer: AdsSerializer
+    ): DataStore<AdsRoot> =
+        DataStoreFactory.create(
+            serializer = adsSerializer,
+            corruptionHandler = null,
+            scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
+        ){
+            context.dataStoreFile("video_list.pb")
+        }
+
 
 }

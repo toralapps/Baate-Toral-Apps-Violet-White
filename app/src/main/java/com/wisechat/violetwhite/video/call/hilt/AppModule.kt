@@ -5,7 +5,6 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.core.DataStoreFactory
 import androidx.datastore.dataStoreFile
 import com.app.ads.CachVideos
-import com.app.ads.protoserializer.CachVideoSerializer
 import com.wisechat.violetwhite.video.call.protodatastore.VIdeolistSerializer
 import com.wisechat.violetwhite.video.call.retrofit.Api
 import com.wisechat.violetwhite.video.call.videolistmodel.VideoList

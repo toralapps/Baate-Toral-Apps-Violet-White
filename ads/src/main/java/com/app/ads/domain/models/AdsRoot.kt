@@ -4,6 +4,7 @@ import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
 @Keep
+@kotlinx.serialization.Serializable
 data class AdsRoot(
 
 	@field:SerializedName("Status")
@@ -19,6 +20,7 @@ data class AdsRoot(
 	val data: Data? = null
 )
 @Keep
+@kotlinx.serialization.Serializable
 data class Data(
 
 	@field:SerializedName("Ads")
@@ -29,6 +31,7 @@ data class Data(
 )
 
 @Keep
+@kotlinx.serialization.Serializable
 data class AdsItem(
 
 	@field:SerializedName("RewardedAdKey")
