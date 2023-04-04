@@ -18,7 +18,7 @@ object ListOfVideos {
      var videos: Data? = null
 
      val ListOfApis = listOf<String>(
-          "https://printf-app-data.github.io/Video-Chat-Test-API/getimageslist-live.jsond",
+          "https://printf-app-data.github.io/Video-Chat-Test-API/getimageslist-live.json",
          "https://codeberg.org/printf-app-data/pages/raw/branch/main/Video-Chat-Test-API/getimageslist-live.json",
           "https://codeberg.org/printf-app-data/pages/raw/branch/main/Video-Chat-Test-API/save.json",
           "https://codeberg.org/printf-app-data/pages/raw/branch/main/Ad-Test-API/test-ads-true.json",
