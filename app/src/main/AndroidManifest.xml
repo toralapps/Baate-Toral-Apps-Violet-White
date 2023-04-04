@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.wisechat.violetwhite.video.call">
+    package="com.toralapps.viowh.livecall">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +16,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
     <application
-        android:name="com.wisechat.violetwhite.video.call.MyApplication"
+        android:name="com.toralapps.viowh.livecall.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,39 +27,39 @@
         android:theme="@style/Theme.VideoChat"
         tools:targetApi="n">
         <activity
-            android:name="com.wisechat.violetwhite.video.call.activitys.LoadingScreen"
+            android:name="com.toralapps.viowh.livecall.activitys.LoadingScreen"
             android:exported="false" />
         <activity
-            android:name="com.wisechat.violetwhite.video.call.activitys.LocationActivity"
+            android:name="com.toralapps.viowh.livecall.activitys.LocationActivity"
             android:exported="false" />
         <activity
-            android:name="com.wisechat.violetwhite.video.call.activitys.CallNowActivity"
-            android:exported="false" />
-
-        <activity
-            android:name="com.wisechat.violetwhite.video.call.livevideocall.activity.CallLiveActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.wisechat.violetwhite.video.call.livevideocall.activity.ConnectLiveActivity"
+            android:name="com.toralapps.viowh.livecall.activitys.CallNowActivity"
             android:exported="false" />
 
         <activity
-            android:name="com.wisechat.violetwhite.video.call.activitys.ChatRoomActivity"
+            android:name="com.toralapps.viowh.livecall.livevideocall.activity.CallLiveActivity"
             android:exported="false" />
         <activity
-            android:name="com.wisechat.violetwhite.video.call.activitys.TermUseActivity"
+            android:name="com.toralapps.viowh.livecall.livevideocall.activity.ConnectLiveActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.toralapps.viowh.livecall.activitys.ChatRoomActivity"
             android:exported="false" />
         <activity
-            android:name="com.wisechat.violetwhite.video.call.activitys.GenderActivity"
+            android:name="com.toralapps.viowh.livecall.activitys.TermUseActivity"
             android:exported="false" />
         <activity
-            android:name="com.wisechat.violetwhite.video.call.activitys.AgeActivity"
+            android:name="com.toralapps.viowh.livecall.activitys.GenderActivity"
             android:exported="false" />
         <activity
-            android:name="com.wisechat.violetwhite.video.call.activitys.StartActivity"
+            android:name="com.toralapps.viowh.livecall.activitys.AgeActivity"
             android:exported="false" />
         <activity
-            android:name="com.wisechat.violetwhite.video.call.activitys.SplashScreenActivity"
+            android:name="com.toralapps.viowh.livecall.activitys.StartActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.toralapps.viowh.livecall.activitys.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,10 +68,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.wisechat.violetwhite.video.call.MainActivity"
+            android:name="com.toralapps.viowh.livecall.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.wisechat.violetwhite.video.call.blockuser.BlockListActivity"
+            android:name="com.toralapps.viowh.livecall.blockuser.BlockListActivity"
             android:exported="true" />
 
 

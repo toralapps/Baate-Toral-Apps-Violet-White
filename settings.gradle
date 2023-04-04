@@ -20,6 +20,6 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name ="Baate Wise Chat Violet White"
+rootProject.name ="Baate Toral Apps Violet White"
 include ':app'
 include ':ads'
