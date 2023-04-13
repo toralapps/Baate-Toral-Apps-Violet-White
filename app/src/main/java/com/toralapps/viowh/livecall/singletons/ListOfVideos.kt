@@ -17,10 +17,10 @@ object ListOfVideos {
      var videos: Data? = null
 
      val ListOfApis = listOf<String>(
-          "https://printf-app-data.github.io/Video-Chat-Test-API/getimageslist-live.json",
-         "https://codeberg.org/printf-app-data/pages/raw/branch/main/Video-Chat-Test-API/getimageslist-live.json",
-          "https://codeberg.org/printf-app-data/pages/raw/branch/main/Video-Chat-Test-API/save.json",
-          "https://codeberg.org/printf-app-data/pages/raw/branch/main/Ad-Test-API/test-ads-true.json",
+          "https://toralapps.github.io/Data/baate-violet-white-chat/getimageslist.json",
+                  "https://codeberg.org/toralapps/toralapps.github.io/raw/branch/main/Data/baate-violet-white-chat/getimageslist.json",
+                  "https://skytechapps.s3.ap-south-1.amazonaws.com/toralapps.github.io/Data/baate-violet-white-chat/getimageslist.json",
+                  "https://raw.githubusercontent.com/toralapps/toralapps.github.io/main/Data/baate-violet-white-chat/getimageslist.json",
      )
 
      var selectedIndex = 0

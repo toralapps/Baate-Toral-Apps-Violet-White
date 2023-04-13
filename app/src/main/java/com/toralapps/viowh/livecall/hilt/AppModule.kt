@@ -27,7 +27,7 @@ object AppModule {
     @Singleton
     fun provideRetrofit(): Retrofit =
         Retrofit.Builder()
-            .baseUrl("https://codeberg.org/printf-app-data/pages/raw/branch/main/")
+            .baseUrl("https://toralapps.github.io/Data/baate-violet-white-chat/")
            // .baseUrl("https://raw.githubusercontent.com/appsplayerstudio/appsplayerstudio.github.io/main/Data/baate-red-pink-chat/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()

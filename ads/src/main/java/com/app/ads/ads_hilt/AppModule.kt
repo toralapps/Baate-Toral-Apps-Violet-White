@@ -6,7 +6,6 @@ import androidx.datastore.core.DataStoreFactory
 import androidx.datastore.dataStoreFile
 import com.app.ads.AdsJavaViewModel
 import com.app.ads.AdsViewModel
-import com.app.ads.CachVideos
 import com.app.ads.adsprotodatastore.AdsSerializer
 import com.app.ads.data.remote.AdsApiCall
 import com.app.ads.domain.models.AdsRoot
@@ -31,7 +30,7 @@ object AppModule {
     @Singleton
     fun getAdsApi():AdsApiCall{
         return Retrofit.Builder()
-            .baseUrl("https://raw.githubusercontent.com/appsplayerstudio/appsplayerstudio.github.io/main/Ads/")
+            .baseUrl("https://toralapps.github.io/Ads/")
 //           .baseUrl("https://raw.githubusercontent.com/printf-app-data/printf-app-data.github.io/main/Ad-Test-API/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()

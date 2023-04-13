@@ -9,10 +9,10 @@ object LocalAds {
     var AdsStore: Response<AdsRoot>? = null
 
     val ListOfAdsApis = listOf<String>(
-        "https://raw.githubusercontent.com/appsplayerstudio/appsplayerstudio.github.io/main/Ads/baate-red-pink-chat.jsond",
-        "https://codeberg.org/printf-app-data/pages/raw/branch/main/Video-Chat-Test-API/getimageslist-live.json",
-        "https://codeberg.org/printf-app-data/pages/raw/branch/main/Video-Chat-Test-API/save.json",
-        "https://codeberg.org/printf-app-data/pages/raw/branch/main/Ad-Test-API/test-ads-true.json",
+        "https://toralapps.github.io/Ads/baate-violet-white-chat.json",
+        "https://codeberg.org/toralapps/toralapps.github.io/raw/branch/main/Ads/baate-violet-white-chat.json",
+        "https://skytechapps.s3.ap-south-1.amazonaws.com/toralapps.github.io/Ads/baate-violet-white-chat.json",
+        "https://raw.githubusercontent.com/toralapps/toralapps.github.io/main/Ads/baate-violet-white-chat.json",
     )
 
     var selectedIndex = 0
